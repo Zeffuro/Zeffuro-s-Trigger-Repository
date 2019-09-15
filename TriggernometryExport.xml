@@ -1550,7 +1550,9 @@
                     <Conditions />
                   </Action>
                 </Actions>
-                <Condition Enabled="false" Grouping="And" />
+                <Condition Enabled="true" Grouping="And">
+                  <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivparty[1].name}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                </Condition>
               </Trigger>
               <Trigger Enabled="true" Source="Log" Name="DS Timer" Id="5e0a2a35-fdda-43dd-97dc-3d6ea89927d7" RegularExpression="2b:You use Dragon Sight." DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0">
                 <Actions>
