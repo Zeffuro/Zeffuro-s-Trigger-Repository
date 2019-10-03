@@ -4,3 +4,23 @@ Matching Player Names: (?<player>[a-zA-Z-' ]{1,31})
 Matching Hexidecimal ID's: [A-F0-9]{8}
 Matching Durations: (?<duration>\d{1,3}\.\d{1,2})
 Matching Entity Names: [\w-'èéêîïôàæûç, ]{1,51}
+
+
+Example Regexes.
+
+1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of (?<dot>Aero|Aero II|Dia) from (?<player>[a-zA-Z-' ]{2,31}) for (?<duration>\d{1,3}\.?(\d{1,2})?) Seconds\.
+1A:[A-F0-9]{8}:(?<player>[a-zA-Z-' ]{1,31}) gains the effect of Jinpu from (?<caster>[a-zA-Z-' ]{1,31}) for (?<duration>\d{1,3}\.\d{1,2}) Seconds\.
+1[56]:[A-F0-9]{8}:(?<caster>[a-zA-Z-' ]{1,31}):40A8:(?<skill>[\w-'èéêîïôàæûç, ]{1,51}):[A-F0-9]{8}:(?<player>[a-zA-Z-' ]{1,31})
+15:[A-F0-9]{8}:(?<caster>[a-zA-Z-' ]{1,31}):65:
+
+
+Handy to have Triggernometry vars:
+
+Player Name (You): ${_ffxivparty[1].name}
+Player Level: ${_ffxivparty[1].level}
+Player Job: ${_ffxivparty[1].job}
+
+
+Copy Pasta's for conditionals
+
+Check if caster = player (you): <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivparty[1].name}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
