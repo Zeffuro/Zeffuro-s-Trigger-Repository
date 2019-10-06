@@ -11,6 +11,7 @@ Example Regexes.
 1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of (?<dot>Aero|Aero II|Dia) from (?<player>[a-zA-Z-' ]{2,31}) for (?<duration>\d{1,3}\.?(\d{1,2})?) Seconds\.
 1A:[A-F0-9]{8}:(?<player>[a-zA-Z-' ]{1,31}) gains the effect of Jinpu from (?<caster>[a-zA-Z-' ]{1,31}) for (?<duration>\d{1,3}\.\d{1,2}) Seconds\.
 1[56]:[A-F0-9]{8}:(?<caster>[a-zA-Z-' ]{1,31}):40A8:(?<skill>[\w-'èéêîïôàæûç, ]{1,51}):[A-F0-9]{8}:(?<player>[a-zA-Z-' ]{1,31})
+1[56]:[A-F0-9]{8}:(?<caster>[a-zA-Z-' ]{1,31}):40A8:[\w-'èéêîïôàæûç, ]{1,51}:[A-F0-9]{8}:(?<player>[a-zA-Z-' ]{1,31})
 15:[A-F0-9]{8}:(?<caster>[a-zA-Z-' ]{1,31}):65:
 
 
