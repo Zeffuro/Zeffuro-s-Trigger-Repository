@@ -5597,6 +5597,21 @@
         <Condition Enabled="false" Grouping="Or" />
         <Conditions />
       </Trigger>
+      <Trigger Enabled="true" Source="Log" Name="Test" Id="3d3db878-f64a-408e-8465-a55390cfd9ad" RegularExpression="" DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0">
+        <Actions />
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
+      <Trigger Enabled="true" Source="Log" Name="Test 2" Id="1a0c1b71-bb3e-4179-afbc-00510a8dae8c" RegularExpression="" DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0">
+        <Actions>
+          <Action OrderNumber="1" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Trigger" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="3d3db878-f64a-408e-8465-a55390cfd9ad" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
+          </Action>
+        </Actions>
+        <Condition Enabled="false" Grouping="Or" />
+        <Conditions />
+      </Trigger>
     </Triggers>
   </ExportedFolder>
 </TriggernometryExport>
