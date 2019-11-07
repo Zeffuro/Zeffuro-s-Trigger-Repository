@@ -1166,9 +1166,11 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:VDCTrackerIconsPersist},1)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Trigger" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${player}].order}VDC-DEV)} playerindex:${_ffxivparty[${player}].order} ${var:VDC-DEV} used:1 onyou:1" TriggerForce="active" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -1327,9 +1329,11 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:VDCTrackerIconsPersist},1)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Trigger" ExecutionDelayExpression="1" Asynchronous="False" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${caster}].order}VDC-EMB)} playerindex:${_ffxivparty[${caster}].order} ${var:VDC-EMB} used:1 onyou:1" TriggerForce="active" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -1496,23 +1500,18 @@
               <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="7c902ceb-bb27-484b-915b-5355b92eda21" Name="NIN" Enabled="true">
                 <Folders />
                 <Triggers>
-                  <Trigger Enabled="true" Source="Log" Name="Trick Attack" Id="1a3388ef-979c-43b0-8610-6f377fa31640" RegularExpression="1[56]:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):8D2:(?&lt;skill&gt;[\w-'èéêîïôàæûç, ]{1,51}):[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}):(?&lt;hit&gt;(20|7))\d{5,7}:" DebugLevel="Warning" PrevActions="Interrupt" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
+                  <Trigger Enabled="true" Source="Log" Name="Trick Attack" Id="1a3388ef-979c-43b0-8610-6f377fa31640" RegularExpression="1[56]:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):8D2:" DebugLevel="Warning" PrevActions="Interrupt" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
                     <Actions>
                       <Action OrderNumber="1" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="ListVariable" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Push" ListVariableName="VDC-ActiveAbilities" ListVariableExpression="${_ffxivparty[${caster}].order}VDC-TA" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${hit}" ExpressionTypeL="Numeric" ExpressionR="20" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:VDCTrackerIconsPersist},1)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
-                      <Action OrderNumber="2" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Trigger" ExecutionDelayExpression="1" Asynchronous="False" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${caster}].order}VDC-TA)} playerindex:${_ffxivparty[${caster}].order} ${var:VDC-TA} used:1 onyou:0 statustype:2 status:Missed" TriggerForce="active" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${hit}" ExpressionTypeL="Numeric" ExpressionR="7" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
-                      </Action>
-                      <Action OrderNumber="3" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Trigger" ExecutionDelayExpression="1" Asynchronous="False" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${caster}].order}VDC-TA)} playerindex:${_ffxivparty[${caster}].order} ${var:VDC-TA} used:1 onyou:1 statustype:1 status:Hit" TriggerForce="active" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
-                        <Condition Enabled="true" Grouping="Or">
-                          <ConditionSingle Enabled="true" ExpressionL="${hit}" ExpressionTypeL="Numeric" ExpressionR="20" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                        </Condition>
+                      <Action OrderNumber="2" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Trigger" ExecutionDelayExpression="1" Asynchronous="False" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${caster}].order}VDC-TA)} playerindex:${_ffxivparty[${caster}].order} ${var:VDC-TA} used:1 onyou:1" TriggerForce="active" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
+                        <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -1772,54 +1771,65 @@
           </Folder>
           <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="a551a4dc-31e8-4c05-aa2a-17fb00acd968" Name="Ability Triggers" Enabled="true">
             <Folders>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="0cb308e7-5d69-4738-bbea-d401fc126deb" Name="AST" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="4294967296" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="0cb308e7-5d69-4738-bbea-d401fc126deb" Name="AST" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="DIV Timer" Id="b6fc65cf-a026-4e45-9bfc-eec35c76f83a" RegularExpression="1[56]:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):40A8:(?&lt;skill&gt;[\w-'èéêîïôàæûç, ]{1,51}):[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31})" DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
                     <Actions>
                       <Action OrderNumber="1" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="DeactivateAura" AuraName="VBT-DIV-Fill-Flash" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="DeactivateAura" AuraName="VBT-DIV-Aura-Flash" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="${var:BuffTrackerAlternateBarStyleUrl}" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="4" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Bar.png" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="5" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetNumeric" VariableName="DIVBarY" VariableExpression="if(${var:ZeffSettingsLoaded},${var:BuffTrackerY},780) + 20" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="6" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetNumeric" VariableName="DIVBarX" VariableExpression="if(${var:ZeffSettingsLoaded},${var:BuffTrackerX},650)" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="7" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VBT-DIV-Bar" AuraImage="${var:BarImageUrl}" AuraXIniExpression="${var:DIVBarX}" AuraYIniExpression="${var:DIVBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},15-${_since}),0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="8" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VBT-DIV-GCD-Fill" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/DIV-GCD-Fill.png" AuraXIniExpression="${var:DIVBarX}" AuraYIniExpression="${var:DIVBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*((120000-${_sincems})/120000)" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},15-${_since}),0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="9" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VBT-DIV-Fill" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/DIV-Fill.png" AuraXIniExpression="${var:DIVBarX}" AuraYIniExpression="${var:DIVBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*((15000-${_sincems})/15000)" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},15-${_since}),0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="10" AuraImageMode="Zoom" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VBT-DIV-Aura" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/DIV-Aura.png" AuraXIniExpression="${var:DIVBarX} - 25" AuraYIniExpression="${var:DIVBarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},15-${_since}),0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerAurasEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="11" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="((120 - 10) * 1000)" Asynchronous="False" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VBT-DIV-Fill-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Fill-Flash.png" AuraXIniExpression="${var:DIVBarX}" AuraYIniExpression="${var:DIVBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*((120000-${_sincems})/120000)" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 55" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},15-${_since}),0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="12" AuraImageMode="Zoom" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="" Asynchronous="False" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VBT-DIV-Aura-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Buff-Aura-Flash.png" AuraXIniExpression="${var:DIVBarX} - 25" AuraYIniExpression="${var:DIVBarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="0" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 35" AuraTTLTickExpression="120-${_since}" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="And">
@@ -1827,6 +1837,7 @@
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -1904,7 +1915,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="038c1351-ea21-4083-bc1a-9ea862d94d69" Name="BRD" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="4194304" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="038c1351-ea21-4083-bc1a-9ea862d94d69" Name="BRD" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="RS Timer" Id="94e1b440-646b-4798-933a-00f3842f1e37" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):65:" DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -1967,7 +1978,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="504748ca-9f6d-4fcb-8871-ac13ab022912" Name="DNC" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="137438953472" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="504748ca-9f6d-4fcb-8871-ac13ab022912" Name="DNC" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="DM Timer" Id="4dc53a2a-a983-4a61-a84f-b53f4e445241" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):3E8B:" DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -2184,7 +2195,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="8fdbc87a-5145-4f25-87cc-fdec28948512" Name="DRG" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="2097152" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="8fdbc87a-5145-4f25-87cc-fdec28948512" Name="DRG" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="FFXIVNetwork" Name="DB Timer" Id="806bf994-8edd-4f2d-9c28-ec39d6185ad4" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Disembowel from (?&lt;caster&gt;[a-zA-Z-' ]{1,31}) for (?&lt;duration&gt;\d{1,3}\.\d{1,2}) Seconds\." DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -2358,7 +2369,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="39a6d3d1-c08f-4d68-a7f9-7589d93f340c" Name="DRK" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="2147483648" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="39a6d3d1-c08f-4d68-a7f9-7589d93f340c" Name="DRK" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="DEL Timer" Id="fbca1842-0fed-437c-91a7-5076823235a2" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):1CDE:" DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -2479,7 +2490,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="f3017c8e-afbd-4eb3-89f9-a7bcdee63471" Name="GNB" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="68719476736" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="f3017c8e-afbd-4eb3-89f9-a7bcdee63471" Name="GNB" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="NM Timer" Id="486cab77-3c7f-44ff-bd29-0ab810ce76de" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):3F0A:" DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -2542,7 +2553,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="5e308fce-d731-4166-8622-326066fc00ab" Name="MCH" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="1073741824" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="5e308fce-d731-4166-8622-326066fc00ab" Name="MCH" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="HC Timer" Id="2ca9ac25-d8c8-4063-8232-8921e3ce5e17" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):4339:" DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -2639,7 +2650,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="a8f4a871-22cc-4771-98ae-9e8804622b38" Name="MNK" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="524288" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="a8f4a871-22cc-4771-98ae-9e8804622b38" Name="MNK" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="TS Timer" Id="ed556e13-d37d-4247-a1ef-644f2c796788" RegularExpression="1A:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}) gains the effect of Twin Snakes from (?&lt;caster&gt;[a-zA-Z-' ]{1,31}) for (?&lt;duration&gt;\d{1,3}\.\d{1,2}) Seconds\." DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -2755,7 +2766,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="388bcc79-606e-4abb-8d78-73e38a138d3c" Name="PLD" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="262144" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="388bcc79-606e-4abb-8d78-73e38a138d3c" Name="PLD" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="FF Timer" Id="a7900c87-e554-4ff7-9c75-729973a6b25c" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):14:" DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -2876,7 +2887,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="b41cb065-ea5c-4fca-8350-47feb181086d" Name="NIN" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="536870912" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="b41cb065-ea5c-4fca-8350-47feb181086d" Name="NIN" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="HUT Timer" Id="f384c2e1-ec97-46a7-9ed4-f750fe5c0fd9" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):(?&lt;skill&gt;8DD|DEB):" DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -2970,7 +2981,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="24f7a510-7cda-4b30-b6d4-e3a6ad1d2d4d" Name="SAM" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="8589934592" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="24f7a510-7cda-4b30-b6d4-e3a6ad1d2d4d" Name="SAM" Enabled="true">
                 <Folders>
                   <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="679c89f3-9faa-4800-a4ae-85706ea03545" Name="Meditate" Enabled="true">
                     <Folders />
@@ -3146,7 +3157,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="8cf80728-123f-4d12-a225-81725c881121" Name="SMN" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="67108864" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="8cf80728-123f-4d12-a225-81725c881121" Name="SMN" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="FFXIVNetwork" Name="Ruin IV stack amount changed" Id="8af08d04-21b0-4b6b-bd1b-0eb4bf577430" RegularExpression="4bc\|Further Ruin\|(?&lt;gain&gt;0|9999)\.00\|[A-F0-9]{8}\|(?&lt;caster&gt;[a-zA-Z-' ]{1,31})\|[A-F0-9]{8}\|(?&lt;player&gt;[a-zA-Z-' ]{1,31})\|0(?&lt;stacks&gt;\d)" DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -3222,7 +3233,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="0396669e-a3f1-4ddc-a19f-67fe0d0f5967" Name="WAR" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="1048576" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="0396669e-a3f1-4ddc-a19f-67fe0d0f5967" Name="WAR" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="BS Timer" Id="f7cad745-4990-460c-83f1-a15385e5d0f4" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):26:" DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -3396,7 +3407,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="6ddde84b-587c-44de-86c1-46094f3fa97e" Name="WHM" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="8388608" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="6ddde84b-587c-44de-86c1-46094f3fa97e" Name="WHM" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="POM Timer" Id="3352ebe7-efed-4e27-be15-2121d774c7c3" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):88:" DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -3469,7 +3480,7 @@
         <Folders>
           <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="2a112142-a876-4ba6-8714-3484e74c2b2c" Name="Ability Triggers" Enabled="true">
             <Folders>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="0beacfdb-485c-44b4-bbc0-6c1f81b1f5c8" Name="AST" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="4294967296" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="0beacfdb-485c-44b4-bbc0-6c1f81b1f5c8" Name="AST" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="COM Timer" Id="3153f0d8-376c-47b2-acd6-ae037d87df6f" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of (?&lt;dot&gt;Combust ?(I{2,3})?) from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\." DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -3525,7 +3536,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="6ce0c026-5310-4f01-8259-4c33e13a8c2e" Name="BLM" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="16777216" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="6ce0c026-5310-4f01-8259-4c33e13a8c2e" Name="BLM" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="T3 Timer" Id="7ff01823-2b48-4b74-abd8-6e4ab821b783" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of (?&lt;dot&gt;Thunder ?(I{1,3}V?)?) from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.\d{1,2}) Seconds\." DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -3581,7 +3592,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="2104bcfd-db45-480e-b903-5a6cb8860a71" Name="BRD" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="4194304" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="2104bcfd-db45-480e-b903-5a6cb8860a71" Name="BRD" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="SB Timer" Id="d0781dea-7552-403b-9507-0cc4cae390ea" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of (?&lt;dot&gt;Stormbite|Windbite) from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\." DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -3688,7 +3699,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="e7bc24ad-821b-4d08-a0cb-6226abf016f9" Name="DRG" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="2097152" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="e7bc24ad-821b-4d08-a0cb-6226abf016f9" Name="DRG" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="CT Timer" Id="7ee2b1c5-ec1c-4c92-ade1-9d440fafcbf8" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of Chaos Thrust from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\." DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -3744,7 +3755,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="6c45b7ac-4917-4deb-a179-542bad0840d5" Name="MCH" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="1073741824" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="6c45b7ac-4917-4deb-a179-542bad0840d5" Name="MCH" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="BB Timer" Id="b90a00bd-e36a-4bb5-9a8a-400e4b8a0e63" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of Bioblaster from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\." DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -3800,7 +3811,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="556a92fa-88e7-460d-8d6b-5c37ca59fd27" Name="MNK" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="524288" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="556a92fa-88e7-460d-8d6b-5c37ca59fd27" Name="MNK" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="DEM Timer" Id="ccf3e5c0-2070-4665-ba8d-18e3e9bc00f4" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of Demolish from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\." DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -3856,7 +3867,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="6d96738c-2c62-41d1-b6be-ebd56212aa07" Name="NIN" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="536870912" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="6d96738c-2c62-41d1-b6be-ebd56212aa07" Name="NIN" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="SF Timer" Id="34fa7aa7-6e20-4d5b-b10d-fd2ed5749fa3" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of Shadow Fang from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\." DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -3912,7 +3923,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="2deaabcc-4fb8-4555-8f44-1be3688b4ad0" Name="PLD" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="262144" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="2deaabcc-4fb8-4555-8f44-1be3688b4ad0" Name="PLD" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="GB Timer" Id="45743186-c352-4be7-9534-68b4b5a87a2e" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of Goring Blade from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\." DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -4019,7 +4030,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="7efcbf0d-eaae-47c8-923a-caeb6fef3524" Name="SAM" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="8589934592" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="7efcbf0d-eaae-47c8-923a-caeb6fef3524" Name="SAM" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="HB Timer" Id="6e272008-452c-4fe4-9a4f-cb36d1739acc" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of Higanbana from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\." DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
@@ -4075,111 +4086,132 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="a029f814-d46c-4cb3-9208-36941bf6847a" Name="SCH" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="134217728" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="a029f814-d46c-4cb3-9208-36941bf6847a" Name="SCH" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="BIO Timer" Id="2cdb665b-a5ae-458a-8456-772a324669d8" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of (?&lt;dot&gt;Bio ?(I{2})?|Biolysis) from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds" DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
                     <Actions>
                       <Action OrderNumber="1" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="DeactivateAura" AuraName="VDT-BIO-Fill-Flash" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="DeactivateAura" AuraName="VDT-BIO-Aura-Flash" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="${var:DoTTrackerAlternateBarStyleUrl}" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="4" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Bar.png" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="5" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetNumeric" VariableName="BIOBarX" VariableExpression="if(${var:ZeffSettingsLoaded},${var:DoTTrackerX},650)" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="6" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetNumeric" VariableName="BIOBarY" VariableExpression="if(${var:ZeffSettingsLoaded},${var:DoTTrackerY},690)" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="7" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-BIO-Bar" AuraImage="${var:BarImageUrl}" AuraXIniExpression="${var:BIOBarX}" AuraYIniExpression="${var:BIOBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:DoTTrackerHideWhenDroppedOff},${duration}-${_since},0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="8" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-BIO-Fill" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/BIO-Fill.png" AuraXIniExpression="${var:BIOBarX}" AuraYIniExpression="${var:BIOBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*(((${duration} * 1000)-${_sincems})/(${duration} * 1000))" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:DoTTrackerHideWhenDroppedOff},${duration}-${_since},0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="9" AuraImageMode="Zoom" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-BIO-Aura" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/BIO-Aura.png" AuraXIniExpression="${var:BIOBarX} - 25" AuraYIniExpression="${var:BIOBarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:DoTTrackerHideWhenDroppedOff},${duration}-${_since},0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerAurasEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="10" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="((${duration} - 5) * 1000)" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-BIO-Fill-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Fill-Flash.png" AuraXIniExpression="${var:BIOBarX}" AuraYIniExpression="${var:BIOBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*(((${duration} * 1000)-${_sincems})/(${duration} * 1000))" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 55" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:DoTTrackerHideWhenDroppedOff},${duration}-${_since},0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="11" AuraImageMode="Zoom" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-BIO-Aura-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/DoT-Aura-Flash.png" AuraXIniExpression="${var:BIOBarX} - 25" AuraYIniExpression="${var:BIOBarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="0" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 35" AuraTTLTickExpression="(${duration})-${_since}" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerAurasEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].job}" ExpressionTypeL="String" ExpressionR="SCH" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="a55b486b-af5b-48e1-97bf-1521dc2a8dff" Name="SMN" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="67108864" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="a55b486b-af5b-48e1-97bf-1521dc2a8dff" Name="SMN" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="M3 Timer" Id="d5e1803c-d7dc-4abb-ba76-8f170c524028" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of (?&lt;dot&gt;Miasma ?(I{2,3})?) from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\." DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
                     <Actions>
                       <Action OrderNumber="1" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="DeactivateAura" AuraName="VDT-M3-Fill-Flash" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="DeactivateAura" AuraName="VDT-M3-Aura-Flash" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="${var:DoTTrackerAlternateBarStyleUrl}" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="4" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Bar.png" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="5" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetNumeric" VariableName="M3BarX" VariableExpression="if(${var:ZeffSettingsLoaded},${var:DoTTrackerX},650)" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="6" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetNumeric" VariableName="M3BarY" VariableExpression="if(${var:ZeffSettingsLoaded},${var:DoTTrackerY},690) + 20" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="7" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-M3-Bar" AuraImage="${var:BarImageUrl}" AuraXIniExpression="${var:M3BarX}" AuraYIniExpression="${var:M3BarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:DoTTrackerHideWhenDroppedOff},${duration}-${_since},0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="8" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-M3-Fill" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/M3-Fill.png" AuraXIniExpression="${var:M3BarX}" AuraYIniExpression="${var:M3BarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*(((${duration} * 1000)-${_sincems})/(${duration} * 1000))" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:DoTTrackerHideWhenDroppedOff},${duration}-${_since},0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="9" AuraImageMode="Zoom" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-M3-Aura" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/M3-Aura.png" AuraXIniExpression="${var:M3BarX} - 25" AuraYIniExpression="${var:M3BarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:DoTTrackerHideWhenDroppedOff},${duration}-${_since},0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerAurasEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="10" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="((${duration} - 5) * 1000)" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-M3-Fill-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Fill-Flash.png" AuraXIniExpression="${var:M3BarX}" AuraYIniExpression="${var:M3BarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*(((${duration} * 1000)-${_sincems})/(${duration} * 1000))" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 55" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:DoTTrackerHideWhenDroppedOff},${duration}-${_since},0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="11" AuraImageMode="Zoom" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-M3-Aura-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/DoT-Aura-Flash.png" AuraXIniExpression="${var:M3BarX} - 25" AuraYIniExpression="${var:M3BarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="0" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 35" AuraTTLTickExpression="(${duration})-${_since}" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerAurasEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -4190,57 +4222,67 @@
                     <Actions>
                       <Action OrderNumber="1" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="DeactivateAura" AuraName="VDT-B3-Fill-Flash" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="DeactivateAura" AuraName="VDT-B3-Aura-Flash" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="${var:DoTTrackerAlternateBarStyleUrl}" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="4" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Bar.png" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="5" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetNumeric" VariableName="B3BarX" VariableExpression="if(${var:ZeffSettingsLoaded},${var:DoTTrackerX},650)" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="6" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Variable" ExecutionDelayExpression="0" DebugLevel="Inherit" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="SetNumeric" VariableName="B3BarY" VariableExpression="if(${var:ZeffSettingsLoaded},${var:DoTTrackerY},690)" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="7" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-B3-Bar" AuraImage="${var:BarImageUrl}" AuraXIniExpression="${var:B3BarX}" AuraYIniExpression="${var:B3BarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:DoTTrackerHideWhenDroppedOff},${duration}-${_since},0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="8" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" Asynchronous="False" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-B3-Fill" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/B3-Fill.png" AuraXIniExpression="${var:B3BarX}" AuraYIniExpression="${var:B3BarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*(((${duration} * 1000)-${_sincems})/(${duration} * 1000))" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:DoTTrackerHideWhenDroppedOff},${duration}-${_since},0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="9" AuraImageMode="Zoom" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="0" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-B3-Aura" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/B3-Aura.png" AuraXIniExpression="${var:B3BarX} - 25" AuraYIniExpression="${var:B3BarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:DoTTrackerHideWhenDroppedOff},${duration}-${_since},0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerAurasEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="10" AuraImageMode="Normal" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="((${duration} - 5) * 1000)" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-B3-Fill-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Fill-Flash.png" AuraXIniExpression="${var:B3BarX}" AuraYIniExpression="${var:B3BarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*(((${duration} * 1000)-${_sincems})/(${duration} * 1000))" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 55" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:DoTTrackerHideWhenDroppedOff},${duration}-${_since},0),0)" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="11" AuraImageMode="Zoom" TextAuraAlignment="MiddleCenter" TextAuraFontSize="8.25" TextAuraEffect="None" ActionType="Aura" ExecutionDelayExpression="" DebugLevel="Inherit" RefireInterrupt="True" SystemBeepFreqExpression="1000" SystemBeepLengthExpression="100" PlaySoundVolumeExpression="100" UseTTSVolumeExpression="100" UseTTSRateExpression="0" LaunchProcessWindowStyle="Normal" ExecScriptType="CSharp" MessageBoxIconType="None" VariableOp="Unset" ListVariableOp="Unset" ListVariableExpressionType="String" TriggerOp="FireTrigger" TriggerForce="" TriggerId="00000000-0000-0000-0000-000000000000" FolderOp="EnableFolder" FolderId="00000000-0000-0000-0000-000000000000" AuraOp="ActivateAura" AuraName="VDT-B3-Aura-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/DoT-Aura-Flash.png" AuraXIniExpression="${var:B3BarX} - 25" AuraYIniExpression="${var:B3BarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="0" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 35" AuraTTLTickExpression="(${duration})-${_since}" TextAuraOp="ActivateAura" TextAuraFontName="Microsoft Sans Serif" TextAuraForeground="Black" TextAuraBackground="Transparent" TextAuraOutline="White" OBSControlType="StartStreaming" KeypressType="SendKeys">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerAurasEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].job}" ExpressionTypeL="String" ExpressionR="SMN" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </Condition>
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="false" FFXIVJobFilter="0" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="500ecea4-db86-49e0-ad7f-08667590305b" Name="WHM" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="true" FFXIVJobFilter="8388608" ZoneFilterEnabled="false" EventFilterEnabled="false" Id="500ecea4-db86-49e0-ad7f-08667590305b" Name="WHM" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="Log" Name="DIA Timer" Id="beea7391-8e50-4c2f-b30d-2b6127effddb" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of (?&lt;dot&gt;Aero ?(I{2})?|Dia) from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\." DebugLevel="Inherit" PrevActions="Keep" PrevActionsRefire="Allow" Scheduling="FromFire" PeriodRefire="Allow" RefirePeriodExpression="0" EditAutofire="false">
