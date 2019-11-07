@@ -4238,7 +4238,7 @@
                   <ConditionGroup Enabled="true" Grouping="Or">
                     <ConditionGroup Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="Numeric" ExpressionR="19" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
-                      <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="NumericEqual" />
+                      <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                     </ConditionGroup>
                     <ConditionGroup Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${id}" ExpressionTypeL="Numeric" ExpressionR="01" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
