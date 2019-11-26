@@ -1710,7 +1710,7 @@
           </Folder>
           <Folder Id="a551a4dc-31e8-4c05-aa2a-17fb00acd968" Name="Ability Triggers" Enabled="true">
             <Folders>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4294967000" Id="0cb308e7-5d69-4738-bbea-d401fc126deb" Name="AST" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4294967296" Id="0cb308e7-5d69-4738-bbea-d401fc126deb" Name="AST" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="DIV Timer" Id="b6fc65cf-a026-4e45-9bfc-eec35c76f83a" RegularExpression="1[56]:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):40A8:(?&lt;skill&gt;[\w-'èéêîïôàæûç, ]{1,51}):[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31})">
@@ -1905,7 +1905,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="137439000000" Id="504748ca-9f6d-4fcb-8871-ac13ab022912" Name="DNC" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="137438953472" Id="504748ca-9f6d-4fcb-8871-ac13ab022912" Name="DNC" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="DM Timer" Id="4dc53a2a-a983-4a61-a84f-b53f4e445241" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):3E8B:">
@@ -2296,7 +2296,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="2147484000" Id="39a6d3d1-c08f-4d68-a7f9-7589d93f340c" Name="DRK" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="2147483648" Id="39a6d3d1-c08f-4d68-a7f9-7589d93f340c" Name="DRK" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="DEL Timer" Id="fbca1842-0fed-437c-91a7-5076823235a2" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):1CDE:">
@@ -2417,7 +2417,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="68719480000" Id="f3017c8e-afbd-4eb3-89f9-a7bcdee63471" Name="GNB" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="68719476736" Id="f3017c8e-afbd-4eb3-89f9-a7bcdee63471" Name="GNB" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="NM Timer" Id="486cab77-3c7f-44ff-bd29-0ab810ce76de" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):3F0A:">
@@ -2480,7 +2480,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="1073742000" Id="5e308fce-d731-4166-8622-326066fc00ab" Name="MCH" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="1073741824" Id="5e308fce-d731-4166-8622-326066fc00ab" Name="MCH" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="HC Timer" Id="2ca9ac25-d8c8-4063-8232-8921e3ce5e17" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):4339:">
@@ -2814,7 +2814,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="536870900" Id="b41cb065-ea5c-4fca-8350-47feb181086d" Name="NIN" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="536870912" Id="b41cb065-ea5c-4fca-8350-47feb181086d" Name="NIN" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="HUT Timer" Id="f384c2e1-ec97-46a7-9ed4-f750fe5c0fd9" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):(?&lt;skill&gt;8DD|DEB):">
@@ -2908,7 +2908,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="8589935000" Id="24f7a510-7cda-4b30-b6d4-e3a6ad1d2d4d" Name="SAM" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="8589934592" Id="24f7a510-7cda-4b30-b6d4-e3a6ad1d2d4d" Name="SAM" Enabled="true">
                 <Folders>
                   <Folder Id="679c89f3-9faa-4800-a4ae-85706ea03545" Name="Meditate" Enabled="true">
                     <Folders />
@@ -3084,7 +3084,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="67108860" Id="8cf80728-123f-4d12-a225-81725c881121" Name="SMN" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="67108864" Id="8cf80728-123f-4d12-a225-81725c881121" Name="SMN" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Source="FFXIVNetwork" Name="Ruin IV stack amount changed" Id="8af08d04-21b0-4b6b-bd1b-0eb4bf577430" RegularExpression="4bc\|Further Ruin\|(?&lt;gain&gt;0|9999)\.00\|[A-F0-9]{8}\|(?&lt;caster&gt;[a-zA-Z-' ]{1,31})\|[A-F0-9]{8}\|(?&lt;player&gt;[a-zA-Z-' ]{1,31})\|0(?&lt;stacks&gt;\d)">
@@ -3093,11 +3093,13 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${gain}" ExpressionTypeL="Numeric" ExpressionR="9999" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="VBT-R4Stacks" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${gain}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -3394,7 +3396,7 @@
         <Folders>
           <Folder Id="2a112142-a876-4ba6-8714-3484e74c2b2c" Name="Ability Triggers" Enabled="true">
             <Folders>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4294967000" Id="0beacfdb-485c-44b4-bbc0-6c1f81b1f5c8" Name="AST" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4294967296" Id="0beacfdb-485c-44b4-bbc0-6c1f81b1f5c8" Name="AST" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="COM Timer" Id="3153f0d8-376c-47b2-acd6-ae037d87df6f" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of (?&lt;dot&gt;Combust ?(I{2,3})?) from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\.">
@@ -3450,7 +3452,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="16777220" Id="6ce0c026-5310-4f01-8259-4c33e13a8c2e" Name="BLM" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="16777216" Id="6ce0c026-5310-4f01-8259-4c33e13a8c2e" Name="BLM" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="T3 Timer" Id="7ff01823-2b48-4b74-abd8-6e4ab821b783" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of (?&lt;dot&gt;Thunder ?(I{1,3}V?)?) from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.\d{1,2}) Seconds\.">
@@ -3669,7 +3671,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="1073742000" Id="6c45b7ac-4917-4deb-a179-542bad0840d5" Name="MCH" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="1073741824" Id="6c45b7ac-4917-4deb-a179-542bad0840d5" Name="MCH" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="BB Timer" Id="b90a00bd-e36a-4bb5-9a8a-400e4b8a0e63" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of Bioblaster from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\.">
@@ -3781,7 +3783,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="536870900" Id="6d96738c-2c62-41d1-b6be-ebd56212aa07" Name="NIN" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="536870912" Id="6d96738c-2c62-41d1-b6be-ebd56212aa07" Name="NIN" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="SF Timer" Id="34fa7aa7-6e20-4d5b-b10d-fd2ed5749fa3" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of Shadow Fang from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\.">
@@ -3944,7 +3946,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="8589935000" Id="7efcbf0d-eaae-47c8-923a-caeb6fef3524" Name="SAM" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="8589934592" Id="7efcbf0d-eaae-47c8-923a-caeb6fef3524" Name="SAM" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="HB Timer" Id="6e272008-452c-4fe4-9a4f-cb36d1739acc" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of Higanbana from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\.">
@@ -4000,7 +4002,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="134217700" Id="a029f814-d46c-4cb3-9208-36941bf6847a" Name="SCH" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="134217728" Id="a029f814-d46c-4cb3-9208-36941bf6847a" Name="SCH" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="BIO Timer" Id="2cdb665b-a5ae-458a-8456-772a324669d8" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of (?&lt;dot&gt;Bio ?(I{2})?|Biolysis) from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds">
@@ -4056,7 +4058,7 @@
                   </Trigger>
                 </Triggers>
               </Folder>
-              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="67108860" Id="a55b486b-af5b-48e1-97bf-1521dc2a8dff" Name="SMN" Enabled="true">
+              <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="67108864" Id="a55b486b-af5b-48e1-97bf-1521dc2a8dff" Name="SMN" Enabled="true">
                 <Folders />
                 <Triggers>
                   <Trigger Enabled="true" Name="M3 Timer" Id="d5e1803c-d7dc-4abb-ba76-8f170c524028" RegularExpression="1A:[A-F0-9]{8}:[\w-'èéêîïôàæûç, ]{1,99} gains the effect of (?&lt;dot&gt;Miasma ?(I{2,3})?) from (?&lt;player&gt;[a-zA-Z-' ]{2,31}) for (?&lt;duration&gt;\d{1,3}\.?(\d{1,2})?) Seconds\.">
