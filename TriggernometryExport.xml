@@ -4783,7 +4783,7 @@
         <Actions />
         <Condition Enabled="false" Grouping="Or" />
       </Trigger>
-      <Trigger Enabled="false" IsReadme="True" Name="VIDEO HOW TO SETUP IN README DESCRIPTION" Id="45b8a0c3-11e4-4a87-a83f-98cd492a18d8" RegularExpression="" Description="https://youtu.be/43qmH1NpMhQ&#xD;&#xA;&#xD;&#xA;In case you actually looked here, I've also got you covered :3">
+      <Trigger Enabled="false" Name="VIDEO HOW TO SETUP IN README DESCRIPTION" Id="45b8a0c3-11e4-4a87-a83f-98cd492a18d8" RegularExpression="" Description="https://youtu.be/43qmH1NpMhQ&#xD;&#xA;&#xD;&#xA;In case you actually looked here, I've also got you covered :3">
         <Actions />
         <Condition Enabled="false" Grouping="Or" />
       </Trigger>
