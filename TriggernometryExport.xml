@@ -2065,58 +2065,47 @@
                     <Actions>
                       <Action OrderNumber="1" AuraOp="DeactivateAura" AuraName="VBT-TF-Fill-Flash" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="VBT-TF-Aura-Flash" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="${var:BuffTrackerAlternateBarStyleUrl}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="4" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Bar.png" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="TFBarY" VariableExpression="if(${var:ZeffSettingsLoaded},${var:BuffTrackerY},780) + 20" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="TFBarX" VariableExpression="if(${var:ZeffSettingsLoaded},${var:BuffTrackerX},650)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="7" AuraName="VBT-TF-Bar" AuraImage="${var:BarImageUrl}" AuraXIniExpression="${var:TFBarX}" AuraYIniExpression="${var:TFBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},20-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="8" AuraName="VBT-TF-GCD-Fill" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/TF-GCD-Fill.png" AuraXIniExpression="${var:TFBarX}" AuraYIniExpression="${var:TFBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*((120000-${_sincems})/120000)" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},20-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="9" AuraName="VBT-TF-Fill" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/TF-Fill.png" AuraXIniExpression="${var:TFBarX}" AuraYIniExpression="${var:TFBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*((20000-${_sincems})/20000)" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},20-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="false" Grouping="Or" />
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="10" AuraImageMode="Zoom" AuraName="VBT-TF-Aura" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/TF-Aura.png" AuraXIniExpression="${var:TFBarX} - 25" AuraYIniExpression="${var:TFBarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},20-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:DoTTrackerAurasEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="11" AuraName="VBT-TF-Fill-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Fill-Flash.png" AuraXIniExpression="${var:TFBarX}" AuraYIniExpression="${var:TFBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*((120000-${_sincems})/120000)" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 55" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},20-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" ExecutionDelayExpression="((120 - 10) * 1000)" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
-                        <Conditions />
                       </Action>
                       <Action OrderNumber="12" AuraImageMode="Zoom" AuraName="VBT-TF-Aura-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Buff-Aura-Flash.png" AuraXIniExpression="${var:TFBarX} - 25" AuraYIniExpression="${var:TFBarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="0" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 35" AuraTTLTickExpression="120-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="And">
@@ -2124,7 +2113,6 @@
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
-                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -4791,11 +4779,11 @@
       </Folder>
     </Folders>
     <Triggers>
-      <Trigger Enabled="false" Name="README -&gt; Description" Id="fce829c6-7cc3-4c21-b22b-621c079ab112" RegularExpression="" Description="Thanks for checking out my repository.&#xD;&#xA;&#xD;&#xA;Video on setting it up: https://www.youtube.com/watch?v=klKDNfzPWSI&#xD;&#xA;&#xD;&#xA;Currently there's Visual Dot Timers and Visual Buff Tracker, still want to get more in :)&#xD;&#xA;&#xD;&#xA;Most of the DoT regex's are taken from Aho's TTS callouts for them. Thanks Aho!&#xD;&#xA;MNK Demolish Regex taken from dansa (from Smol Cute Monk Suite). Thanks dansa!&#xD;&#xA;Idea of plugable party cooldown monitor taken from Illidra/Lombax. Thanks Illidra!&#xD;&#xA;&#xD;&#xA;By default the DoT Tracker sits at 650, 690 and the Buff Tracker at 650, 780.&#xD;&#xA;You can change these locations by following these steps (thanks Aho for some of your text!):&#xD;&#xA;&#xD;&#xA;1 - Make a folder in your Local Triggers, name it whatever you want.&#xD;&#xA;2 - Copy&amp;Paste all the triggers in the &quot;SETTINGS -&gt; Copy to your Startup Folder&quot; folder in that new folder&#xD;&#xA;3 - Select said folder as a Startup Folder under : Options -&gt; Edit Configuration -&gt; General -&gt; Startup Folder&#xD;&#xA;4 - Restart ACT or disable/enable the Triggernometry Plugin&#xD;&#xA;&#xD;&#xA;In the case you want any DoT Timer or Buff Timer to have a different location from the general settings&#xD;&#xA;you can go in the triggers and replace &quot;if(${var:ZeffSettingsLoaded},${var:DoTTrackerX},650)&quot; with just the X or Y location&#xD;&#xA;for example: 400&#xD;&#xA;&#xD;&#xA;For the Visual Party Cooldowns you'll want to have Triggernometry's party list order the same as ingames.&#xD;&#xA;To change this go to Options -&gt; Edit configuration -&gt; Final Fantasy XIV tab -&gt; Set ordering method to &quot;Player first, sort the rest by custom party order&quot;.&#xD;&#xA;The options underneath this match the default FFXIV settings.&#xD;&#xA;&#xD;&#xA;Make sure you set the PartyTrackerScale to whatever your party list scale is so the cooldowns line up with the player.&#xD;&#xA;So 80% =  0.8, 120% = 1.2 etc.&#xD;&#xA;&#xD;&#xA;I'll make more as I get information from players.&#xD;&#xA;&#xD;&#xA;If you need help or want to send a suggestion my way you can contact me on Discord @Zeffuro#3033">
+      <Trigger Enabled="false" Name="README -&gt; Description" Id="fce829c6-7cc3-4c21-b22b-621c079ab112" RegularExpression="" Description="Thanks for checking out my repository.&#xD;&#xA;&#xD;&#xA;Video on setting it up: https://youtu.be/43qmH1NpMhQ&#xD;&#xA;&#xD;&#xA;As of writing this readme there's:&#xD;&#xA;&#xD;&#xA;Visual Buff Tracker: Creates bars for important buffs.&#xD;&#xA;Visual Cooldown Tracker: Creates a timeline to see when an ability is going to be up soon again.&#xD;&#xA;Visual DoT Timer: Creates bars for important DoTs that you need to stay on top off.&#xD;&#xA;Visual DPS Cooldowns: These are for Raid DPS Cooldowns, these only show up in instances.&#xD;&#xA;Visual Party Cooldowns: These are for seeing Swiftcasts, Shields and Cheat Death mechanics.&#xD;&#xA;&#xD;&#xA;Most of the DoT regex's are taken from Aho's TTS callouts for them. Thanks Aho!&#xD;&#xA;MNK Demolish Regex taken from dansa (from Smol Cute Monk Suite). Thanks dansa!&#xD;&#xA;Idea of plugable party cooldown monitor taken from Illidra/Lombax. Thanks Illidra!&#xD;&#xA;&#xD;&#xA;You can change the locations of the trackers by following these steps (thanks Aho for some of your text!):&#xD;&#xA;&#xD;&#xA;1 - Make a folder in your Local Triggers, name it whatever you want, I call mine: Startup Folder&#xD;&#xA;2 - Copy&amp;Paste all the triggers in the &quot;SETTINGS -&gt; Copy to your Startup Folder&quot; folder to that new folder &#xD;&#xA;(don't copy the whole folder, the startup folder doesn't trigger subfolders)&#xD;&#xA;3 - Select said folder as a Startup Folder under : Options -&gt; Edit Configuration -&gt; General -&gt; Startup Folder&#xD;&#xA;4 - Restart ACT or disable/enable the Triggernometry Plugin&#xD;&#xA;&#xD;&#xA;For the Visual Party Cooldowns you'll want to have Triggernometry's party list order the same as ingames.&#xD;&#xA;To change this go to Options -&gt; Edit configuration -&gt; Final Fantasy XIV tab -&gt; Set ordering method to &quot;Player first, sort the rest by custom party order&quot;.&#xD;&#xA;The options underneath this match the default FFXIV settings.&#xD;&#xA;&#xD;&#xA;Make sure you set the PartyTrackerScale to whatever your party list scale is so the cooldowns line up with the player.&#xD;&#xA;So 80% =  0.8, 120% = 1.2 etc.&#xD;&#xA;&#xD;&#xA;If you need help or want to send a suggestion my way you can contact me on Discord @Zeffuro#3033">
         <Actions />
         <Condition Enabled="false" Grouping="Or" />
       </Trigger>
-      <Trigger Enabled="false" Name="VIDEO HOW TO SETUP IN README DESCRIPTION" Id="45b8a0c3-11e4-4a87-a83f-98cd492a18d8" RegularExpression="" Description="https://www.youtube.com/watch?v=klKDNfzPWSI&#xD;&#xA;&#xD;&#xA;In case you actually looked here, I've also got you covered :3&#xD;&#xA;&#xD;&#xA;But seriously, read the readme after the video :D">
+      <Trigger Enabled="false" Name="VIDEO HOW TO SETUP IN README DESCRIPTION" Id="45b8a0c3-11e4-4a87-a83f-98cd492a18d8" RegularExpression="" Description="https://youtu.be/43qmH1NpMhQ&#xD;&#xA;&#xD;&#xA;In case you actually looked here, I've also got you covered :3">
         <Actions />
         <Condition Enabled="false" Grouping="Or" />
       </Trigger>
