@@ -1156,17 +1156,17 @@
                   </Trigger>
                   <Trigger Enabled="true" Name="Devilment" Id="cfdb5d90-1f78-4753-8743-5be9ffb7511f" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):3E8B:[\w-'èéêîïôàæûç, ]{1,51}:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31})" DebugLevel="Warning" PrevActions="Interrupt">
                     <Actions>
-                      <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="VDC-ActiveAbilities" ListVariableExpression="${_ffxivparty[${caster}].order}VDC-DEV" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="VDC-ActiveAbilities" ListVariableExpression="${_ffxivparty[${caster}].order}VDC-DVL" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:VDCTrackerIconsPersist},1)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${caster}].order}VDC-DEV)} playerindex:${_ffxivparty[${caster}].order} ${var:VDC-DEV} used:1 onyou:0" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${caster}].order}VDC-DVL)} playerindex:${_ffxivparty[${caster}].order} ${var:VDC-DVL} used:1 onyou:0" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${caster}].order}VDC-DEV)} playerindex:${_ffxivparty[${caster}].order} ${var:VDC-DEV} used:1 onyou:1" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${caster}].order}VDC-DVL)} playerindex:${_ffxivparty[${caster}].order} ${var:VDC-DVL} used:1 onyou:1" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
@@ -4517,15 +4517,12 @@
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${etvar:VCT-SpeedLookup}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="VCT-CurrentSkSModifier" VariableExpression="(1000 + ${numeric:floor(130 * (${sks} - ${tvar:VCT-SpeedLookup[1][${_ffxivparty[${_ffxivplayer}].level}]})/3300)})/1000" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="VCT-CurrentSpSModifier" VariableExpression="(1000 + ${numeric:floor(130 * (${sps} - ${tvar:VCT-SpeedLookup[1][${_ffxivparty[${_ffxivplayer}].level}]})/3300)})/1000" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                 </Actions>
                 <Condition Enabled="false" Grouping="Or" />
@@ -4553,120 +4550,99 @@
                 <Actions>
                   <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="VCT-X" VariableExpression="if(${evar:VCTrackerX},${var:VCTrackerX},500)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="VCT-Y" VariableExpression="if(${evar:VCTrackerY},${var:VCTrackerY},500)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="VCT-Scale" VariableExpression="if(${evar:VCTrackerScale},${var:VCTrackerScale},1)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="VCT-Base" VariableExpression="if(${evar:VCTrackerTimeCompression},${var:VCTrackerTimeCompression},0.3)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="VCT-BarWidth" VariableExpression="if(${evar:VCTrackerBarWidth},${var:VCTrackerBarWidth},300) * ${var:VCT-Scale}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="VCT-MaxTime" VariableExpression="if(${evar:VCTrackerMaxTime},${var:VCTrackerMaxTime},120)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="VCT-LagCompensationMS" VariableExpression="if(${evar:VCTrackerLagCompensation},${var:VCTrackerLagCompensation},200)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="8" VariableOp="SetNumeric" VariableName="VCT-Vertical" VariableExpression="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="9" VariableOp="SetNumeric" VariableName="VCT-${id}-Recast" VariableExpression="${recast}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${categoryid}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="${categoryid}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericNotEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="10" VariableOp="SetNumeric" VariableName="VCT-${id}-Recast" VariableExpression="${recast} / if(${evar:VCT-CurrentSkSModifier},${var:VCT-CurrentSkSModifier},1) " TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${categoryid}" ExpressionTypeL="Numeric" ExpressionR="3" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="11" VariableOp="SetNumeric" VariableName="VCT-${id}-Recast" VariableExpression="${recast} / if(${evar:VCT-CurrentSpSModifier},${var:VCT-CurrentSpSModifier},1) " TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="${categoryid}" ExpressionTypeL="Numeric" ExpressionR="2" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="12" AuraImageMode="StretchImage" AuraName="VCT-Background" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/1px-Bar.png" AuraXIniExpression="${var:VCT-X} + 10 * ${var:VCT-Scale}" AuraYIniExpression="${var:VCT-Y} + 40 * ${var:VCT-Scale}" AuraWIniExpression="${var:VCT-BarWidth} + 30 * ${var:VCT-Scale}" AuraHIniExpression="6 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="13" AuraImageMode="StretchImage" AuraName="VCT-Background" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/1px-Bar.png" AuraXIniExpression="(${var:VCT-X} + 10 * ${var:VCT-Scale}) - (${var:VCT-BarWidth} + 30 * ${var:VCT-Scale})" AuraYIniExpression="${var:VCT-Y} + 40 * ${var:VCT-Scale}" AuraWIniExpression="${var:VCT-BarWidth} + 30 * ${var:VCT-Scale}" AuraHIniExpression="6 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="14" AuraImageMode="StretchImage" AuraName="VCT-Background" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/1px-Bar-Vert.png" AuraXIniExpression="${var:VCT-X} + 40 * ${var:VCT-Scale}" AuraYIniExpression="${var:VCT-Y} + 10 * ${var:VCT-Scale}" AuraWIniExpression="6 * ${var:VCT-Scale}" AuraHIniExpression="${var:VCT-BarWidth} + 30 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="15" AuraImageMode="StretchImage" AuraName="VCT-Background" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/1px-Bar-Vert.png" AuraXIniExpression="${var:VCT-X} + 40 * ${var:VCT-Scale}" AuraYIniExpression="(${var:VCT-Y} + 10 * ${var:VCT-Scale}) - (${var:VCT-BarWidth} + 30 * ${var:VCT-Scale})" AuraWIniExpression="6 * ${var:VCT-Scale}" AuraHIniExpression="${var:VCT-BarWidth} + 30 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="16" AuraImageMode="StretchImage" AuraName="VCT-Background-Left" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/1px-Black.png" AuraXIniExpression="${_imageaura[VCT-Background].x}" AuraYIniExpression="${_imageaura[VCT-Background].y}" AuraWIniExpression="2 * ${var:VCT-Scale}" AuraHIniExpression="6 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="17" AuraImageMode="StretchImage" AuraName="VCT-Background-Right" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/1px-Black.png" AuraXIniExpression="${_imageaura[VCT-Background].x} + (${var:VCT-BarWidth} + 30 * ${var:VCT-Scale})" AuraYIniExpression="${_imageaura[VCT-Background].y}" AuraWIniExpression="2 * ${var:VCT-Scale}" AuraHIniExpression="6 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="18" AuraImageMode="StretchImage" AuraName="VCT-Background-Top" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/1px-Black.png" AuraXIniExpression="${_imageaura[VCT-Background].x}" AuraYIniExpression="${_imageaura[VCT-Background].y}" AuraWIniExpression="6 * ${var:VCT-Scale}" AuraHIniExpression="2 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="19" AuraImageMode="StretchImage" AuraName="VCT-Background-Bottom" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/1px-Black.png" AuraXIniExpression="${_imageaura[VCT-Background].x}" AuraYIniExpression="${_imageaura[VCT-Background].y} + (${var:VCT-BarWidth} + 30 * ${var:VCT-Scale})" AuraWIniExpression="6 * ${var:VCT-Scale}" AuraHIniExpression="2 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="20" AuraImageMode="Zoom" AuraName="VCT-Label-0" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/0.png" AuraXIniExpression="${var:VCT-X}" AuraYIniExpression="${var:VCT-Y} + 40 * ${var:VCT-Scale}" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="21" AuraImageMode="Zoom" AuraName="VCT-Label-0" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/0.png" AuraXIniExpression="${var:VCT-X}" AuraYIniExpression="${var:VCT-Y}" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="22" AuraImageMode="Zoom" AuraName="VCT-Label-10" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/10.png" AuraXIniExpression="${var:VCT-X} + (${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(10,${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraYIniExpression="${var:VCT-Y} + 40 * ${var:VCT-Scale}" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
@@ -4674,7 +4650,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="23" AuraImageMode="Zoom" AuraName="VCT-Label-10" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/10.png" AuraXIniExpression="${var:VCT-X}" AuraYIniExpression="${var:VCT-Y} + (${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(10,${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
@@ -4682,7 +4657,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="24" AuraImageMode="Zoom" AuraName="VCT-Label-30" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/30.png" AuraXIniExpression="${var:VCT-X} + (${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(30,${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraYIniExpression="${var:VCT-Y} + 40 * ${var:VCT-Scale}" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
@@ -4690,7 +4664,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="25" AuraImageMode="Zoom" AuraName="VCT-Label-30" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/30.png" AuraXIniExpression="${var:VCT-X}" AuraYIniExpression="${var:VCT-Y} + (${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(30,${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
@@ -4698,7 +4671,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="26" AuraImageMode="Zoom" AuraName="VCT-Label-60" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/1m.png" AuraXIniExpression="${var:VCT-X} + (${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(60,${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraYIniExpression="${var:VCT-Y} + 40 * ${var:VCT-Scale}" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
@@ -4706,7 +4678,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="27" AuraImageMode="Zoom" AuraName="VCT-Label-60" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/1m.png" AuraXIniExpression="${var:VCT-X}" AuraYIniExpression="${var:VCT-Y} + (${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(60,${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
@@ -4714,7 +4685,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="28" AuraImageMode="Zoom" AuraName="VCT-Label-120" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/2m.png" AuraXIniExpression="${var:VCT-X} + (${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(120,${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraYIniExpression="${var:VCT-Y} + 40 * ${var:VCT-Scale}" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
@@ -4722,7 +4692,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="29" AuraImageMode="Zoom" AuraName="VCT-Label-120" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/2m.png" AuraXIniExpression="${var:VCT-X}" AuraYIniExpression="${var:VCT-Y} + (${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(120,${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
@@ -4730,7 +4699,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="30" AuraImageMode="Zoom" AuraName="VCT-Label-180" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/3m.png" AuraXIniExpression="${var:VCT-X} + (${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(180,${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraYIniExpression="${var:VCT-Y} + 40 * ${var:VCT-Scale}" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
@@ -4738,7 +4706,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="31" AuraImageMode="Zoom" AuraName="VCT-Label-180" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/3m.png" AuraXIniExpression="${var:VCT-X}" AuraYIniExpression="${var:VCT-Y} + (${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(180,${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
@@ -4746,7 +4713,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="32" AuraImageMode="Zoom" AuraName="VCT-Label-240" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/4m.png" AuraXIniExpression="${var:VCT-X} + (${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(240,${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraYIniExpression="${var:VCT-Y} + 40 * ${var:VCT-Scale}" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
@@ -4754,7 +4720,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="33" AuraImageMode="Zoom" AuraName="VCT-Label-240" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/4m.png" AuraXIniExpression="${var:VCT-X}" AuraYIniExpression="${var:VCT-Y} + (${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(240,${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
@@ -4762,7 +4727,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="34" AuraImageMode="Zoom" AuraName="VCT-Label-300" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/5m.png" AuraXIniExpression="${var:VCT-X} + (${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(300,${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraYIniExpression="${var:VCT-Y} + 40 * ${var:VCT-Scale}" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
@@ -4770,7 +4734,6 @@
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="35" AuraImageMode="Zoom" AuraName="VCT-Label-300" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Labels/5m.png" AuraXIniExpression="${var:VCT-X}" AuraYIniExpression="${var:VCT-Y} + (${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(300,${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" TextAuraAlignment="BottomCenter" TextAuraFontSize="14.25" TextAuraName="VCT-Label-0" TextAuraExpression="0" TextAuraXIniExpression="${var:VCT-X}" TextAuraYIniExpression="${var:VCT-Y}+10" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                     <Condition Enabled="true" Grouping="And">
@@ -4778,43 +4741,36 @@
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowLabels},${var:VCTrackerShowLabels},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="36" AuraImageMode="Zoom" AuraName="VCT-Aura-${id}" AuraImage="https://xivapi.com${iconurl}" AuraXIniExpression="${var:VCT-X}" AuraYIniExpression="${var:VCT-Y}" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" AuraXTickExpression="${var:VCT-X}+(${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(if(((${recast} / 10) - (${_sincems} / 1000)) &gt; ${var:VCT-MaxTime},${var:VCT-MaxTime},((${recast} / 10) - (${_sincems} / 1000))),${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraTTLTickExpression="(${var:VCT-${id}-Recast}*100)-${_sincems}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" ExecutionDelayExpression="1" Asynchronous="False">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="37" AuraImageMode="Zoom" AuraName="VCT-Aura-${id}" AuraImage="https://xivapi.com${iconurl}" AuraXIniExpression="${var:VCT-X} + (46 * ${var:VCT-Scale})" AuraYIniExpression="${var:VCT-Y}" AuraWIniExpression="40 * ${var:VCT-Scale}" AuraHIniExpression="40 * ${var:VCT-Scale}" AuraOIniExpression="100" AuraYTickExpression="${var:VCT-Y}+(${numeric:if(if(${evar:VCTrackerFlip},${var:VCTrackerFlip},0),-1,1)} * ${numeric:((${numeric:pow(if(((${recast} / 10) - (${_sincems} / 1000)) &gt; ${var:VCT-MaxTime},${var:VCT-MaxTime},((${recast} / 10) - (${_sincems} / 1000))),${var:VCT-Base})} / ${numeric:pow(${var:VCT-MaxTime},${var:VCT-Base})}) * ${var:VCT-BarWidth})})" AuraTTLTickExpression="(${var:VCT-${id}-Recast}*100)-${_sincems}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" ExecutionDelayExpression="1" Asynchronous="False">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerVertical},${var:VCTrackerVertical},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="38" AuraImageMode="Zoom" AuraName="VCT-Aura-${id}-Overlay" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/IconOverlay.png" AuraXIniExpression="${_imageaura[VCT-Aura-${id}].x}" AuraYIniExpression="${_imageaura[VCT-Aura-${id}].y}" AuraWIniExpression="48 * ${var:VCT-Scale}" AuraHIniExpression="48 * ${var:VCT-Scale}" AuraOIniExpression="100" AuraXTickExpression="${_imageaura[VCT-Aura-${id}].x} - (4 * ${var:VCT-Scale})" AuraYTickExpression="${_imageaura[VCT-Aura-${id}].y} - (2 * ${var:VCT-Scale})" AuraTTLTickExpression="(${var:VCT-${id}-Recast}*100)-${_sincems}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" ExecutionDelayExpression="1" Asynchronous="False">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerIconsOverlayed},${var:VCTrackerIconsOverlayed},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="39" TextAuraFontSize="9.75" TextAuraForeground="White" TextAuraOutline="Black" TextAuraName="VCT-Cooldown-${id}" TextAuraExpression="${numeric:round((((${var:VCT-${id}-Recast}*100)-${var:VCT-LagCompensationMS})-${_sincems}) / 1000)}" TextAuraXIniExpression="${_imageaura[VCT-Aura-${id}].x}" TextAuraYIniExpression="${_imageaura[VCT-Aura-${id}].y}" TextAuraWIniExpression="40" TextAuraHIniExpression="40" TextAuraOIniExpression="100" TextAuraXTickExpression="${_imageaura[VCT-Aura-${id}].x}" TextAuraYTickExpression="${_imageaura[VCT-Aura-${id}].y}" TextAuraTTLTickExpression="(${var:VCT-${id}-Recast}*100)-${_sincems}" TextAuraUseOutline="True" TextAuraFontName="Microsoft Sans Serif" ActionType="TextAura" ExecutionDelayExpression="1" Asynchronous="False">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerShowCooldown},${var:VCTrackerShowCooldown},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="40" UseTTSTextExpression="${skillname}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="UseTTS" ExecutionDelayExpression="(${recast}*100)-200">
                     <Condition Enabled="true" Grouping="And">
                       <ConditionSingle Enabled="true" ExpressionL="if(${evar:VCTrackerEnableTTSCallOut},${var:VCTrackerEnableTTSCallOut},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="41" LogMessageText="ID: ${id} Name: ${skillname} Recast: ${recast}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="LogMessage">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${recast}" ExpressionTypeL="Numeric" ExpressionR="100" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                     </Condition>
-                    <Conditions />
                   </Action>
                 </Actions>
                 <Condition Enabled="true" Grouping="Or">
@@ -4825,327 +4781,246 @@
                 <Actions>
                   <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="56" TableVariableX="1" TableVariableY="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="57" TableVariableX="1" TableVariableY="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="3" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="60" TableVariableX="1" TableVariableY="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="4" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="62" TableVariableX="1" TableVariableY="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="5" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="65" TableVariableX="1" TableVariableY="5" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="6" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="68" TableVariableX="1" TableVariableY="6" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="7" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="70" TableVariableX="1" TableVariableY="7" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="8" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="73" TableVariableX="1" TableVariableY="8" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="9" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="76" TableVariableX="1" TableVariableY="9" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="10" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="78" TableVariableX="1" TableVariableY="10" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="11" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="82" TableVariableX="1" TableVariableY="11" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="12" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="85" TableVariableX="1" TableVariableY="12" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="13" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="89" TableVariableX="1" TableVariableY="13" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="14" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="93" TableVariableX="1" TableVariableY="14" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="15" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="96" TableVariableX="1" TableVariableY="15" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="16" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="100" TableVariableX="1" TableVariableY="16" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="17" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="104" TableVariableX="1" TableVariableY="17" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="18" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="109" TableVariableX="1" TableVariableY="18" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="19" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="113" TableVariableX="1" TableVariableY="19" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="20" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="116" TableVariableX="1" TableVariableY="20" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="21" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="122" TableVariableX="1" TableVariableY="21" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="22" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="127" TableVariableX="1" TableVariableY="22" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="23" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="133" TableVariableX="1" TableVariableY="23" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="24" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="138" TableVariableX="1" TableVariableY="24" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="25" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="144" TableVariableX="1" TableVariableY="25" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="26" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="150" TableVariableX="1" TableVariableY="26" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="27" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="155" TableVariableX="1" TableVariableY="27" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="28" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="162" TableVariableX="1" TableVariableY="28" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="29" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="168" TableVariableX="1" TableVariableY="29" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="30" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="173" TableVariableX="1" TableVariableY="30" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="31" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="181" TableVariableX="1" TableVariableY="31" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="32" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="188" TableVariableX="1" TableVariableY="32" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="33" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="194" TableVariableX="1" TableVariableY="33" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="34" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="202" TableVariableX="1" TableVariableY="34" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="35" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="209" TableVariableX="1" TableVariableY="35" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="36" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="215" TableVariableX="1" TableVariableY="36" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="37" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="223" TableVariableX="1" TableVariableY="37" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="38" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="229" TableVariableX="1" TableVariableY="38" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="39" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="236" TableVariableX="1" TableVariableY="39" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="40" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="244" TableVariableX="1" TableVariableY="40" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="41" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="253" TableVariableX="1" TableVariableY="41" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="42" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="263" TableVariableX="1" TableVariableY="42" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="43" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="272" TableVariableX="1" TableVariableY="43" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="44" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="283" TableVariableX="1" TableVariableY="44" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="45" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="292" TableVariableX="1" TableVariableY="45" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="46" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="302" TableVariableX="1" TableVariableY="46" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="47" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="311" TableVariableX="1" TableVariableY="47" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="48" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="322" TableVariableX="1" TableVariableY="48" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="49" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="331" TableVariableX="1" TableVariableY="49" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="50" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="341" TableVariableX="1" TableVariableY="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="51" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="342" TableVariableX="1" TableVariableY="51" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="52" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="344" TableVariableX="1" TableVariableY="52" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="53" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="345" TableVariableX="1" TableVariableY="53" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="54" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="346" TableVariableX="1" TableVariableY="54" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="55" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="347" TableVariableX="1" TableVariableY="55" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="56" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="349" TableVariableX="1" TableVariableY="56" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="57" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="350" TableVariableX="1" TableVariableY="57" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="58" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="351" TableVariableX="1" TableVariableY="58" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="59" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="352" TableVariableX="1" TableVariableY="59" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="60" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="354" TableVariableX="1" TableVariableY="60" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="61" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="355" TableVariableX="1" TableVariableY="61" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="62" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="356" TableVariableX="1" TableVariableY="62" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="63" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="357" TableVariableX="1" TableVariableY="63" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="64" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="358" TableVariableX="1" TableVariableY="64" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="65" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="359" TableVariableX="1" TableVariableY="65" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="66" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="360" TableVariableX="1" TableVariableY="66" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="67" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="361" TableVariableX="1" TableVariableY="67" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="68" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="362" TableVariableX="1" TableVariableY="68" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="69" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="363" TableVariableX="1" TableVariableY="69" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="70" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="364" TableVariableX="1" TableVariableY="70" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="71" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="365" TableVariableX="1" TableVariableY="71" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="72" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="366" TableVariableX="1" TableVariableY="72" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="73" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="367" TableVariableX="1" TableVariableY="73" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="74" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="368" TableVariableX="1" TableVariableY="74" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="75" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="370" TableVariableX="1" TableVariableY="75" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="76" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="372" TableVariableX="1" TableVariableY="76" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="77" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="374" TableVariableX="1" TableVariableY="77" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="78" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="376" TableVariableX="1" TableVariableY="78" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="79" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="378" TableVariableX="1" TableVariableY="79" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                   <Action OrderNumber="80" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="380" TableVariableX="1" TableVariableY="80" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
-                    <Conditions />
                   </Action>
                 </Actions>
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Trigger>
             </Triggers>
           </Folder>
