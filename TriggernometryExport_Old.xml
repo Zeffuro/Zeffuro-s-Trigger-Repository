@@ -1089,31 +1089,37 @@
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:VDCTrackerIconsPersist},1)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
-                      <Action OrderNumber="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${player}].order}VDC-TS)} playerindex:${_ffxivparty[${player}].order} ${var:VDC-TS} used:1 onyou:1 leavecd:1 statustype:2 status:Single" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${player}].order}VDC-TS)} playerindex:${_ffxivparty[${player}].order} ${var:VDC-TS} used:1 onyou:1 statustype:2 status:Single" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${skillid}" ExpressionTypeL="String" ExpressionR="3F41" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Action>
-                      <Action OrderNumber="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${player}].order}VDC-TS)} playerindex:${_ffxivparty[${player}].order} ${var:VDC-TS} used:1 onyou:1 leavecd:1 statustype:2 status:Double" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${player}].order}VDC-TS)} playerindex:${_ffxivparty[${player}].order} ${var:VDC-TS} used:1 onyou:1 statustype:2 status:Double" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${skillid}" ExpressionTypeL="String" ExpressionR="3F42" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Action>
-                      <Action OrderNumber="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${player}].order}VDC-TS)} playerindex:${_ffxivparty[${player}].order} ${var:VDC-TS} used:1 onyou:1 leavecd:1 statustype:2 status:Triple" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${player}].order}VDC-TS)} playerindex:${_ffxivparty[${player}].order} ${var:VDC-TS} used:1 onyou:1 statustype:2 status:Triple" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${skillid}" ExpressionTypeL="String" ExpressionR="3F43" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Action>
-                      <Action OrderNumber="5" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${player}].order}VDC-TS)} playerindex:${_ffxivparty[${player}].order} ${var:VDC-TS} used:1 onyou:1 leavecd:1 statustype:1 status:Quadruple" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="5" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${player}].order}VDC-TS)} playerindex:${_ffxivparty[${player}].order} ${var:VDC-TS} used:1 onyou:1 statustype:1 status:Quadruple" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${skillid}" ExpressionTypeL="String" ExpressionR="3F44" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="6" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${player}].order}VDC-TS)} playerindex:${_ffxivparty[${player}].order} ${var:VDC-TS} used:1 onyou:0" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${skillid}" ExpressionTypeL="String" ExpressionR="3E84" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
