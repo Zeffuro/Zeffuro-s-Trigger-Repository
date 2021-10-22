@@ -1083,7 +1083,7 @@
               <Folder Id="cee959c1-f8e6-493b-9e45-61aed7a32f6f" Name="DNC" Enabled="true">
                 <Folders />
                 <Triggers>
-                  <Trigger Enabled="true" Name="Technical Finish" Id="0d175c49-dbe7-473d-aa8e-c9f017088700" RegularExpression="1[56]:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}):(?&lt;skillid&gt;3(?:E84|F4[1-4]|E7E)):" DebugLevel="Warning" PrevActions="Interrupt">
+                  <Trigger Enabled="true" Name="Technical Finish" Id="0d175c49-dbe7-473d-aa8e-c9f017088700" RegularExpression="1[56]:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}):(?&lt;skillid&gt;3(?:E84|F4[1-4])):" DebugLevel="Warning" PrevActions="Interrupt">
                     <Actions>
                       <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="VDC-ActiveAbilities" ListVariableExpression="${_ffxivparty[${player}].order}VDC-TS" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
@@ -1110,14 +1110,9 @@
                           <ConditionSingle Enabled="true" ExpressionL="${skillid}" ExpressionTypeL="String" ExpressionR="3F44" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="6" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${player}].order}VDC-TS)} playerindex:${_ffxivparty[${player}].order} ${var:VDC-TS} used:1 onyou:1 leavecd:1 statustype:2 status:Failed" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="6" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${player}].order}VDC-TS)} playerindex:${_ffxivparty[${player}].order} ${var:VDC-TS} used:1 onyou:0" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${skillid}" ExpressionTypeL="String" ExpressionR="3E84" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
-                        </Condition>
-                      </Action>
-                      <Action OrderNumber="7" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${player}].order}VDC-TS)} playerindex:${_ffxivparty[${player}].order} ${var:VDC-TS} used:1 onyou:0" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
-                        <Condition Enabled="true" Grouping="And">
-                          <ConditionSingle Enabled="true" ExpressionL="${skillid}" ExpressionTypeL="String" ExpressionR="3E7E" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
                       </Action>
                     </Actions>
@@ -1161,17 +1156,17 @@
                   </Trigger>
                   <Trigger Enabled="true" Name="Devilment" Id="cfdb5d90-1f78-4753-8743-5be9ffb7511f" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):3E8B:[\w-'èéêîïôàæûç, ]{1,51}:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31})" DebugLevel="Warning" PrevActions="Interrupt">
                     <Actions>
-                      <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="VDC-ActiveAbilities" ListVariableExpression="${_ffxivparty[${caster}].order}VDC-DVL" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False">
+                      <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="VDC-ActiveAbilities" ListVariableExpression="${_ffxivparty[${caster}].order}VDC-DEV" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:VDCTrackerIconsPersist},1)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${caster}].order}VDC-DVL)} playerindex:${_ffxivparty[${caster}].order} ${var:VDC-DVL} used:1 onyou:0" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${caster}].order}VDC-DEV)} playerindex:${_ffxivparty[${caster}].order} ${var:VDC-DEV} used:1 onyou:0" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringNotEqualNocase" />
                         </Condition>
                       </Action>
-                      <Action OrderNumber="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${caster}].order}VDC-DVL)} playerindex:${_ffxivparty[${caster}].order} ${var:VDC-DVL} used:1 onyou:1" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
+                      <Action OrderNumber="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${caster}].order}VDC-DEV)} playerindex:${_ffxivparty[${caster}].order} ${var:VDC-DEV} used:1 onyou:1" TriggerForce="active" ActionType="Trigger" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualNocase" />
                         </Condition>
@@ -4434,53 +4429,6 @@
             </Actions>
             <Condition Enabled="false" Grouping="Or" />
           </Trigger>
-          <Trigger Enabled="true" Name="Settings - Visual Cooldown Tracker" Id="387f8536-b279-4e3c-9442-3a99ad8d5856" RegularExpression="" EditAutofire="True">
-            <Actions>
-              <Action OrderNumber="1" AuraName="DoubleClick this to check X and Y coordinates" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="Aura">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="VCTrackerX" VariableExpression="300" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-              <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="VCTrackerY" VariableExpression="570" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-              <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="VCTrackerWidth" VariableExpression="300" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-              <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="VCTrackerScale" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-              <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="VCTrackerIconsOverlayed" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-              <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="VCTrackerShowCooldown" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-              <Action OrderNumber="8" VariableOp="SetNumeric" VariableName="VCTrackerShowLabels" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-              <Action OrderNumber="9" VariableOp="SetNumeric" VariableName="VCTrackerTimeCompression" VariableExpression="0.3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-              <Action OrderNumber="10" VariableOp="SetNumeric" VariableName="VCTrackerLagCompensation" VariableExpression="200" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-              <Action OrderNumber="11" VariableOp="SetNumeric" VariableName="VCTrackerMaxTime" VariableExpression="120" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-              <Action OrderNumber="12" VariableOp="SetNumeric" VariableName="VCTrackerVertical" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-              <Action OrderNumber="13" VariableOp="SetNumeric" VariableName="VCTrackerFlip" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-              <Action OrderNumber="14" VariableOp="SetNumeric" VariableName="VCTrackerEnableTTSCallOut" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
-                <Condition Enabled="false" Grouping="Or" />
-              </Action>
-            </Actions>
-            <Condition Enabled="false" Grouping="Or" />
-          </Trigger>
           <Trigger Enabled="true" Name="Settings - Visual Cooldown Tracker - Skill Blacklist" Id="1c6afdb8-72d9-47c4-9e4a-571a15435a5e" RegularExpression="">
             <Actions>
               <Action OrderNumber="1" ListVariableOp="Push" ListVariableExpressionType="Numeric" ListVariableName="VCTrackerSkillBlacklist" ListVariableExpression="7" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable">
@@ -4491,6 +4439,68 @@
               </Action>
             </Actions>
             <Condition Enabled="false" Grouping="Or" />
+          </Trigger>
+          <Trigger Enabled="true" Name="Settings - Visual Cooldown Tracker" Id="0efe8e90-8020-4840-86c4-6f6ac81a143e" RegularExpression="" EditAutofire="True">
+            <Actions>
+              <Action OrderNumber="1" AuraName="DoubleClick this to check X and Y coordinates" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="Aura">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="VCTrackerX" VariableExpression="300" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="VCTrackerY" VariableExpression="570" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="VCTrackerWidth" VariableExpression="300" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="VCTrackerScale" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="VCTrackerIconsOverlayed" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="VCTrackerShowCooldown" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="8" VariableOp="SetNumeric" VariableName="VCTrackerShowLabels" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="9" VariableOp="SetNumeric" VariableName="VCTrackerTimeCompression" VariableExpression="0.3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="10" VariableOp="SetNumeric" VariableName="VCTrackerLagCompensation" VariableExpression="200" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="11" VariableOp="SetNumeric" VariableName="VCTrackerMaxTime" VariableExpression="120" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="12" VariableOp="SetNumeric" VariableName="VCTrackerVertical" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="13" VariableOp="SetNumeric" VariableName="VCTrackerFlip" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+              <Action OrderNumber="14" VariableOp="SetNumeric" VariableName="VCTrackerEnableTTSCallOut" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
+                <Condition Enabled="false" Grouping="Or" />
+                <Conditions />
+              </Action>
+            </Actions>
+            <Condition Enabled="false" Grouping="Or" />
+            <Conditions />
           </Trigger>
         </Triggers>
       </Folder>
