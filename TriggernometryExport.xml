@@ -1364,15 +1364,17 @@
               <Folder Id="0670be72-4159-4529-acdd-f586ed8937b5" Name="AST" Enabled="true">
                 <Folders />
                 <Triggers>
-                  <Trigger Enabled="true" Name="Divination" Id="85474dae-6249-408e-ac3a-9bc40a85fbaf" RegularExpression="1[56]:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):40A8:(?&lt;skill&gt;[\w-'èéêîïôàæûç, ]{1,51}):[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31})" DebugLevel="Warning" PrevActions="Interrupt">
+                  <Trigger Enabled="true" Name="Divination" Id="85474dae-6249-408e-ac3a-9bc40a85fbaf" RegularExpression="1[56]:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):40A8:(?&lt;skill&gt;[\w-'èéêîïôàæûç, ]{1,51}):[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31})" DebugLevel="Warning" PrevActions="Interrupt" PeriodRefire="Deny" RefirePeriodExpression="1000">
                     <Actions>
                       <Action OrderNumber="1" ListVariableOp="Push" ListVariableName="VDC-ActiveAbilities" ListVariableExpression="${_ffxivparty[${caster}].order}VDC-DIV" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="ListVariable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:VDCTrackerIconsPersist},1)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="047a3fb5-8d81-4cc5-8bdd-6bbed45cc5e6" TriggerText="index:${lvar:VDC-LoadedAbilities.indexof(${_ffxivparty[${caster}].order}VDC-DIV)} playerindex:${_ffxivparty[${caster}].order} ${var:VDC-DIV} used:1 onyou:1" TriggerForce="active" ActionType="Trigger" ExecutionDelayExpression="1" Asynchronous="False">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
@@ -1713,51 +1715,62 @@
               <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4294967296" Id="0cb308e7-5d69-4738-bbea-d401fc126deb" Name="AST" Enabled="true">
                 <Folders />
                 <Triggers>
-                  <Trigger Enabled="true" Name="DIV Timer" Id="b6fc65cf-a026-4e45-9bfc-eec35c76f83a" RegularExpression="1[56]:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):40A8:(?&lt;skill&gt;[\w-'èéêîïôàæûç, ]{1,51}):[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31})">
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Name="DIV Timer" Id="b6fc65cf-a026-4e45-9bfc-eec35c76f83a" RegularExpression="^2[12]\|[^|]*\|[A-Z0-9]{8}\|(?&lt;player&gt;[^|]{2,31})\|40A8\|(?&lt;spell&gt;[^|]+)\|" PeriodRefire="Deny" RefirePeriodExpression="1000">
                     <Actions>
                       <Action OrderNumber="1" AuraOp="DeactivateAura" AuraName="VBT-DIV-Fill-Flash" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="VBT-DIV-Aura-Flash" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="${var:BuffTrackerAlternateBarStyleUrl}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="4" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Bar.png" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="DIVBarY" VariableExpression="if(${var:ZeffSettingsLoaded},${var:BuffTrackerY},780) + 20" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="DIVBarX" VariableExpression="if(${var:ZeffSettingsLoaded},${var:BuffTrackerX},650)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="7" AuraName="VBT-DIV-Bar" AuraImage="${var:BarImageUrl}" AuraXIniExpression="${var:DIVBarX}" AuraYIniExpression="${var:DIVBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},15-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="8" AuraName="VBT-DIV-GCD-Fill" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/DIV-GCD-Fill.png" AuraXIniExpression="${var:DIVBarX}" AuraYIniExpression="${var:DIVBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*((120000-${_sincems})/120000)" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},15-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="9" AuraName="VBT-DIV-Fill" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/DIV-Fill.png" AuraXIniExpression="${var:DIVBarX}" AuraYIniExpression="${var:DIVBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*((15000-${_sincems})/15000)" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},15-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="10" AuraImageMode="Zoom" AuraName="VBT-DIV-Aura" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/DIV-Aura.png" AuraXIniExpression="${var:DIVBarX} - 25" AuraYIniExpression="${var:DIVBarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},15-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerAurasEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="11" AuraName="VBT-DIV-Fill-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Fill-Flash.png" AuraXIniExpression="${var:DIVBarX}" AuraYIniExpression="${var:DIVBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*((120000-${_sincems})/120000)" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 55" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},15-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" ExecutionDelayExpression="((120 - 10) * 1000)" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="12" AuraImageMode="Zoom" AuraName="VBT-DIV-Aura-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Buff-Aura-Flash.png" AuraXIniExpression="${var:DIVBarX} - 25" AuraYIniExpression="${var:DIVBarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="0" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 35" AuraTTLTickExpression="120-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="And">
@@ -1765,68 +1778,81 @@
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${caster}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
-                      <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                     </Condition>
                   </Trigger>
-                  <Trigger Enabled="true" Name="LS Timer" Id="b52b61a6-e9bc-4840-bd89-c478a32ca0a5" RegularExpression="1[56]:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):E16:(?&lt;skill&gt;[\w-'èéêîïôàæûç, ]{1,51}):[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31})">
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Name="LS Timer" Id="b52b61a6-e9bc-4840-bd89-c478a32ca0a5" RegularExpression="^2[12]\|[^|]*\|[A-Z0-9]{8}\|(?&lt;player&gt;[^|]{2,31})\|E16\|(?&lt;spell&gt;[^|]+)\|">
                     <Actions>
                       <Action OrderNumber="1" VariableOp="SetNumeric" VariableName="LS-Cooldown" VariableExpression="90" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].level}" ExpressionTypeL="Numeric" ExpressionR="68" ExpressionTypeR="Numeric" ConditionType="NumericGreaterEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="LS-Cooldown" VariableExpression="120" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="${_ffxivparty[${_ffxivplayer}].level}" ExpressionTypeL="Numeric" ExpressionR="68" ExpressionTypeR="Numeric" ConditionType="NumericLess" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" AuraOp="DeactivateAura" AuraName="VBT-LS-Fill-Flash" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="4" AuraOp="DeactivateAura" AuraName="VBT-LS-Aura-Flash" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="5" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="${var:BuffTrackerAlternateBarStyleUrl}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="6" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Bar.png" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="LSBarY" VariableExpression="if(${var:ZeffSettingsLoaded},${var:BuffTrackerY},780)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="8" VariableOp="SetNumeric" VariableName="LSBarX" VariableExpression="if(${var:ZeffSettingsLoaded},${var:BuffTrackerX},650)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="9" AuraName="VBT-LS-Bar" AuraImage="${var:BarImageUrl}" AuraXIniExpression="${var:LSBarX}" AuraYIniExpression="${var:LSBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},120-${_since},15-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="10" AuraName="VBT-LS-GCD-Fill" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/LS-GCD-Fill.png" AuraXIniExpression="${var:LSBarX}" AuraYIniExpression="${var:LSBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraYTickExpression="(${var:LS-Cooldown}*1000)" AuraWTickExpression="152*(((${var:LS-Cooldown}*1000)-${_sincems})/(${var:LS-Cooldown}*1000))" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},${var:LS-Cooldown}-${_since},15-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="11" AuraName="VBT-LS-Fill" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/LS-Fill.png" AuraXIniExpression="${var:LSBarX}" AuraYIniExpression="${var:LSBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*(((${var:LS-Cooldown}*1000)-${_sincems})/(${var:LS-Cooldown}*1000))" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},${var:LS-Cooldown}-${_since},15-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="12" AuraImageMode="Zoom" AuraName="VBT-LS-Aura" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/LS-Aura.png" AuraXIniExpression="${var:LSBarX} - 25" AuraYIniExpression="${var:LSBarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},${var:LS-Cooldown}-${_since},15-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerAurasEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="13" AuraName="VBT-LS-Fill-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Fill-Flash.png" AuraXIniExpression="${var:LSBarX}" AuraYIniExpression="${var:LSBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*(((${var:LS-Cooldown}*1000)-${_sincems})/(${var:LS-Cooldown}*1000))" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 55" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},${var:LS-Cooldown}-${_since},15-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" ExecutionDelayExpression="((${var:LS-Cooldown} - 10) * 1000)" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="14" AuraImageMode="Zoom" AuraName="VBT-LS-Aura-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Buff-Aura-Flash.png" AuraXIniExpression="${var:LSBarX} - 25" AuraYIniExpression="${var:LSBarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="0" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 35" AuraTTLTickExpression="${var:LS-Cooldown}-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="And">
@@ -1834,10 +1860,11 @@
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                     </Condition>
                   </Trigger>
                 </Triggers>
@@ -1845,51 +1872,62 @@
               <Folder FFXIVJobFilterEnabled="True" FFXIVJobFilter="4194304" Id="038c1351-ea21-4083-bc1a-9ea862d94d69" Name="BRD" Enabled="true">
                 <Folders />
                 <Triggers>
-                  <Trigger Enabled="true" Name="RS Timer" Id="94e1b440-646b-4798-933a-00f3842f1e37" RegularExpression="15:[A-F0-9]{8}:(?&lt;caster&gt;[a-zA-Z-' ]{1,31}):65:">
+                  <Trigger Enabled="true" Source="FFXIVNetwork" Name="RS Timer" Id="94e1b440-646b-4798-933a-00f3842f1e37" RegularExpression="^2[12]\|[^|]*\|[A-Z0-9]{8}\|(?&lt;player&gt;[^|]{2,31})\|65\|(?&lt;spell&gt;[^|]+)\|">
                     <Actions>
                       <Action OrderNumber="1" AuraOp="DeactivateAura" AuraName="VBT-RS-Fill-Flash" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="2" AuraOp="DeactivateAura" AuraName="VBT-RS-Aura-Flash" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="3" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="${var:BuffTrackerAlternateBarStyleUrl}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="4" VariableOp="SetString" VariableName="BarImageUrl" VariableExpression="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Bar.png" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerAlternateBarStyle},0)" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="RSBarX" VariableExpression="if(${var:ZeffSettingsLoaded},${var:BuffTrackerX},650)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="RSBarY" VariableExpression="if(${var:ZeffSettingsLoaded},${var:BuffTrackerY},780)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="7" AuraName="VBT-RS-Bar" AuraImage="${var:BarImageUrl}" AuraXIniExpression="${var:RSBarX}" AuraYIniExpression="${var:RSBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},80-${_since},20-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="8" AuraName="VBT-RS-GCD-Fill" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/RS-GCD-Fill.png" AuraXIniExpression="${var:RSBarX}" AuraYIniExpression="${var:RSBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*((80000-${_sincems})/80000)" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},80-${_since},20-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="9" AuraName="VBT-RS-Fill" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/RS-Fill.png" AuraXIniExpression="${var:RSBarX}" AuraYIniExpression="${var:RSBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*((20000-${_sincems})/20000)" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},80-${_since},20-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="false" Grouping="Or" />
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="10" AuraImageMode="Zoom" AuraName="VBT-RS-Aura" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/RS-Aura.png" AuraXIniExpression="${var:RSBarX} - 25" AuraYIniExpression="${var:RSBarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="100" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},80-${_since},20-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="Or">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerAurasEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="11" AuraName="VBT-RS-Fill-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Fill-Flash.png" AuraXIniExpression="${var:RSBarX}" AuraYIniExpression="${var:RSBarY}" AuraWIniExpression="154" AuraHIniExpression="15" AuraOIniExpression="100" AuraWTickExpression="152*((80000-${_sincems})/80000)" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 55" AuraTTLTickExpression="if(${var:ZeffSettingsLoaded},if(${var:BuffTrackerHideWhenDroppedOff},if(${var:BuffTrackerCooldownsEnabled},80-${_since},20-${_since}),0),0)" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" ExecutionDelayExpression="((80 - 10) * 1000)" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="And">
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                       <Action OrderNumber="12" AuraImageMode="Zoom" AuraName="VBT-RS-Aura-Flash" AuraImage="https://raw.githubusercontent.com/Zeffuro/Zeffuro-s-Trigger-Repository/master/Resources/Images/Buff-Aura-Flash.png" AuraXIniExpression="${var:RSBarX} - 25" AuraYIniExpression="${var:RSBarY} - 5" AuraWIniExpression="24" AuraHIniExpression="22" AuraOIniExpression="0" AuraOTickExpression="sin(0.005*${_sincems}) * 25 + 35" AuraTTLTickExpression="80-${_since}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Aura" Asynchronous="False" RefireInterrupt="True">
                         <Condition Enabled="true" Grouping="And">
@@ -1897,10 +1935,11 @@
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerFlashEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                           <ConditionSingle Enabled="true" ExpressionL="if(${var:ZeffSettingsLoaded},${var:BuffTrackerCooldownsEnabled},1)" ExpressionTypeL="Numeric" ExpressionR="1" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                         </Condition>
+                        <Conditions />
                       </Action>
                     </Actions>
                     <Condition Enabled="true" Grouping="And">
-                      <ConditionSingle Enabled="true" ExpressionL="${caster}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
+                      <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                     </Condition>
                   </Trigger>
                 </Triggers>
@@ -4444,63 +4483,48 @@
             <Actions>
               <Action OrderNumber="1" AuraName="DoubleClick this to check X and Y coordinates" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" Enabled="False" ActionType="Aura">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="2" VariableOp="SetNumeric" VariableName="VCTrackerX" VariableExpression="300" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="3" VariableOp="SetNumeric" VariableName="VCTrackerY" VariableExpression="570" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="4" VariableOp="SetNumeric" VariableName="VCTrackerWidth" VariableExpression="300" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="5" VariableOp="SetNumeric" VariableName="VCTrackerScale" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="6" VariableOp="SetNumeric" VariableName="VCTrackerIconsOverlayed" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="7" VariableOp="SetNumeric" VariableName="VCTrackerShowCooldown" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="8" VariableOp="SetNumeric" VariableName="VCTrackerShowLabels" VariableExpression="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="9" VariableOp="SetNumeric" VariableName="VCTrackerTimeCompression" VariableExpression="0.3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="10" VariableOp="SetNumeric" VariableName="VCTrackerLagCompensation" VariableExpression="200" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="11" VariableOp="SetNumeric" VariableName="VCTrackerMaxTime" VariableExpression="120" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="12" VariableOp="SetNumeric" VariableName="VCTrackerVertical" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="13" VariableOp="SetNumeric" VariableName="VCTrackerFlip" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
               <Action OrderNumber="14" VariableOp="SetNumeric" VariableName="VCTrackerEnableTTSCallOut" VariableExpression="0" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="Variable" Asynchronous="False">
                 <Condition Enabled="false" Grouping="Or" />
-                <Conditions />
               </Action>
             </Actions>
             <Condition Enabled="false" Grouping="Or" />
-            <Conditions />
           </Trigger>
         </Triggers>
       </Folder>
@@ -4509,7 +4533,7 @@
           <Folder Id="0795221e-8a8f-4bc0-8eff-decc50ff7112" Name="Internal" Enabled="true">
             <Folders />
             <Triggers>
-              <Trigger Enabled="true" Name="Skill Used" Id="3a1f85ca-64b1-4350-bfe5-e018adec54df" RegularExpression="1[56]:[A-F0-9]{8}:(?&lt;player&gt;[a-zA-Z-' ]{1,31}):(?&lt;skillid&gt;[A-F0-9]{2,4}):">
+              <Trigger Enabled="true" Source="FFXIVNetwork" Name="Skill Used" Id="3a1f85ca-64b1-4350-bfe5-e018adec54df" RegularExpression="^2[12]\|[^|]*\|[A-Z0-9]{8}\|(?&lt;player&gt;[^|]{2,31})\|(?&lt;skillid&gt;[A-F0-9]{2,5})\|(?&lt;spell&gt;[^|]+)\|">
                 <Actions>
                   <Action OrderNumber="1" JsonOperationType="GET" JsonEndpointExpression="https://xivapi.com/Action/${numeric:hex2dec(${skillid})}" JsonFiringExpression="VCT-JSON ID:${_jsonresponse[ID]} Icon:${_jsonresponse[Icon]} Name:${_jsonresponse[Name]} Recast:${_jsonresponse[Recast100ms]} CategoryID:${_jsonresponse[ActionCategoryTargetID]}" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="GenericJson">
                     <Condition Enabled="true" Grouping="And">
@@ -4526,9 +4550,9 @@
                   <ConditionSingle Enabled="true" ExpressionL="${player}" ExpressionTypeL="String" ExpressionR="${_ffxivplayer}" ExpressionTypeR="String" ConditionType="StringEqualCase" />
                 </Condition>
               </Trigger>
-              <Trigger Enabled="true" Name="Retrieve SkS and SpS" Id="8340416b-e517-472a-85c6-077927a58391" RegularExpression="0C:Player Stats: [0-9]{2}:[0-9]{1,4}:[0-9]{1,4}:[0-9]{1,4}:[0-9]{1,4}:[0-9]{1,4}:[0-9]{1,4}:[0-9]{1,4}:[0-9]{1,4}:[0-9]{1,4}:[0-9]{1,4}:[0-9]{1,4}:[0-9]{1,4}:(?&lt;sks&gt;[0-9]{1,4}):(?&lt;sps&gt;[0-9]{1,4}):0:[0-9]{1,4}">
+              <Trigger Enabled="true" Name="Retrieve SkS and SpS" Id="8340416b-e517-472a-85c6-077927a58391" RegularExpression="^\[[^\]]+\] PlayerStats (?&lt;type&gt;0C):(?&lt;job&gt;(?:[^:]*)):(?&lt;strength&gt;(?:[^:]*)):(?&lt;dexterity&gt;(?:[^:]*)):(?&lt;vitality&gt;(?:[^:]*)):(?&lt;intelligence&gt;(?:[^:]*)):(?&lt;mind&gt;(?:[^:]*)):(?&lt;piety&gt;(?:[^:]*)):(?&lt;attackPower&gt;(?:[^:]*)):(?&lt;directHit&gt;(?:[^:]*)):(?&lt;criticalHit&gt;(?:[^:]*)):(?&lt;attackMagicPotency&gt;(?:[^:]*)):(?&lt;healMagicPotency&gt;(?:[^:]*)):(?&lt;determination&gt;(?:[^:]*)):(?&lt;sks&gt;(?:[^:]*)):(?&lt;sps&gt;(?:[^:]*)):[^:]*:(?&lt;tenacity&gt;(?:[^:]*)):(?&lt;localContentId&gt;(?:[^:]*))(?:$|:)">
                 <Actions>
-                  <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="8341a8c9-b0f7-4e6f-8afe-abb7bb738c34" TriggerForce="regexp,conditions,parent,active" ActionType="Trigger">
+                  <Action OrderNumber="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" TriggerId="8341a8c9-b0f7-4e6f-8afe-abb7bb738c34" TriggerForce="regexp,conditions,parent,active" ActionType="Trigger">
                     <Condition Enabled="true" Grouping="Or">
                       <ConditionSingle Enabled="true" ExpressionL="${etvar:VCT-SpeedLookup}" ExpressionTypeL="Numeric" ExpressionR="0" ExpressionTypeR="Numeric" ConditionType="NumericEqual" />
                     </Condition>
@@ -4542,7 +4566,7 @@
                 </Actions>
                 <Condition Enabled="false" Grouping="Or" />
               </Trigger>
-              <Trigger Enabled="true" Name="Reset on Wipe" Id="10d2d37a-6143-4dc9-b762-3ff281b029df" RegularExpression="21:[A-F0-9]{8}:40000010">
+              <Trigger Enabled="true" Source="FFXIVNetwork" Name="Reset on Wipe" Id="10d2d37a-6143-4dc9-b762-3ff281b029df" RegularExpression="^33\|[^|]*\|[A-F0-9]{8}\|400000(?&gt;03|10)\|">
                 <Actions>
                   <Action OrderNumber="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="EndEncounter" ExecutionDelayExpression="1000">
                     <Condition Enabled="false" Grouping="Or" />
@@ -4794,244 +4818,274 @@
               </Trigger>
               <Trigger Enabled="true" Name="Set Speed Lookup Values" Id="8341a8c9-b0f7-4e6f-8afe-abb7bb738c34" RegularExpression="">
                 <Actions>
-                  <Action OrderNumber="1" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="56" TableVariableX="1" TableVariableY="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="1" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="56" TableVariableX="1" TableVariableY="1" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="2" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="57" TableVariableX="1" TableVariableY="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="2" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="57" TableVariableX="1" TableVariableY="2" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="3" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="60" TableVariableX="1" TableVariableY="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="3" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="60" TableVariableX="1" TableVariableY="3" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="4" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="62" TableVariableX="1" TableVariableY="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="4" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="62" TableVariableX="1" TableVariableY="4" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="5" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="65" TableVariableX="1" TableVariableY="5" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="5" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="65" TableVariableX="1" TableVariableY="5" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="6" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="68" TableVariableX="1" TableVariableY="6" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="6" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="68" TableVariableX="1" TableVariableY="6" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="7" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="70" TableVariableX="1" TableVariableY="7" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="7" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="70" TableVariableX="1" TableVariableY="7" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="8" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="73" TableVariableX="1" TableVariableY="8" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="8" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="73" TableVariableX="1" TableVariableY="8" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="9" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="76" TableVariableX="1" TableVariableY="9" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="9" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="76" TableVariableX="1" TableVariableY="9" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="10" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="78" TableVariableX="1" TableVariableY="10" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="10" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="78" TableVariableX="1" TableVariableY="10" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="11" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="82" TableVariableX="1" TableVariableY="11" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="11" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="82" TableVariableX="1" TableVariableY="11" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="12" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="85" TableVariableX="1" TableVariableY="12" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="12" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="85" TableVariableX="1" TableVariableY="12" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="13" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="89" TableVariableX="1" TableVariableY="13" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="13" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="89" TableVariableX="1" TableVariableY="13" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="14" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="93" TableVariableX="1" TableVariableY="14" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="14" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="93" TableVariableX="1" TableVariableY="14" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="15" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="96" TableVariableX="1" TableVariableY="15" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="15" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="96" TableVariableX="1" TableVariableY="15" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="16" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="100" TableVariableX="1" TableVariableY="16" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="16" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="100" TableVariableX="1" TableVariableY="16" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="17" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="104" TableVariableX="1" TableVariableY="17" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="17" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="104" TableVariableX="1" TableVariableY="17" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="18" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="109" TableVariableX="1" TableVariableY="18" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="18" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="109" TableVariableX="1" TableVariableY="18" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="19" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="113" TableVariableX="1" TableVariableY="19" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="19" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="113" TableVariableX="1" TableVariableY="19" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="20" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="116" TableVariableX="1" TableVariableY="20" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="20" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="116" TableVariableX="1" TableVariableY="20" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="21" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="122" TableVariableX="1" TableVariableY="21" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="21" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="122" TableVariableX="1" TableVariableY="21" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="22" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="127" TableVariableX="1" TableVariableY="22" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="22" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="127" TableVariableX="1" TableVariableY="22" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="23" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="133" TableVariableX="1" TableVariableY="23" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="23" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="133" TableVariableX="1" TableVariableY="23" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="24" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="138" TableVariableX="1" TableVariableY="24" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="24" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="138" TableVariableX="1" TableVariableY="24" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="25" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="144" TableVariableX="1" TableVariableY="25" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="25" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="144" TableVariableX="1" TableVariableY="25" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="26" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="150" TableVariableX="1" TableVariableY="26" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="26" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="150" TableVariableX="1" TableVariableY="26" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="27" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="155" TableVariableX="1" TableVariableY="27" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="27" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="155" TableVariableX="1" TableVariableY="27" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="28" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="162" TableVariableX="1" TableVariableY="28" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="28" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="162" TableVariableX="1" TableVariableY="28" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="29" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="168" TableVariableX="1" TableVariableY="29" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="29" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="168" TableVariableX="1" TableVariableY="29" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="30" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="173" TableVariableX="1" TableVariableY="30" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="30" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="173" TableVariableX="1" TableVariableY="30" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="31" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="181" TableVariableX="1" TableVariableY="31" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="31" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="181" TableVariableX="1" TableVariableY="31" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="32" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="188" TableVariableX="1" TableVariableY="32" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="32" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="188" TableVariableX="1" TableVariableY="32" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="33" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="194" TableVariableX="1" TableVariableY="33" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="33" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="194" TableVariableX="1" TableVariableY="33" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="34" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="202" TableVariableX="1" TableVariableY="34" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="34" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="202" TableVariableX="1" TableVariableY="34" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="35" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="209" TableVariableX="1" TableVariableY="35" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="35" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="209" TableVariableX="1" TableVariableY="35" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="36" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="215" TableVariableX="1" TableVariableY="36" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="36" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="215" TableVariableX="1" TableVariableY="36" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="37" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="223" TableVariableX="1" TableVariableY="37" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="37" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="223" TableVariableX="1" TableVariableY="37" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="38" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="229" TableVariableX="1" TableVariableY="38" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="38" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="229" TableVariableX="1" TableVariableY="38" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="39" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="236" TableVariableX="1" TableVariableY="39" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="39" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="236" TableVariableX="1" TableVariableY="39" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="40" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="244" TableVariableX="1" TableVariableY="40" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="40" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="244" TableVariableX="1" TableVariableY="40" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="41" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="253" TableVariableX="1" TableVariableY="41" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="41" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="253" TableVariableX="1" TableVariableY="41" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="42" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="263" TableVariableX="1" TableVariableY="42" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="42" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="263" TableVariableX="1" TableVariableY="42" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="43" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="272" TableVariableX="1" TableVariableY="43" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="43" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="272" TableVariableX="1" TableVariableY="43" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="44" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="283" TableVariableX="1" TableVariableY="44" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="44" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="283" TableVariableX="1" TableVariableY="44" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="45" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="292" TableVariableX="1" TableVariableY="45" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="45" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="292" TableVariableX="1" TableVariableY="45" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="46" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="302" TableVariableX="1" TableVariableY="46" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="46" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="302" TableVariableX="1" TableVariableY="46" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="47" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="311" TableVariableX="1" TableVariableY="47" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="47" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="311" TableVariableX="1" TableVariableY="47" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="48" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="322" TableVariableX="1" TableVariableY="48" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="48" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="322" TableVariableX="1" TableVariableY="48" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="49" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="331" TableVariableX="1" TableVariableY="49" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="49" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="331" TableVariableX="1" TableVariableY="49" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="50" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="341" TableVariableX="1" TableVariableY="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="50" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="341" TableVariableX="1" TableVariableY="50" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="51" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="342" TableVariableX="1" TableVariableY="51" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="51" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="342" TableVariableX="1" TableVariableY="51" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="52" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="344" TableVariableX="1" TableVariableY="52" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="52" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="344" TableVariableX="1" TableVariableY="52" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="53" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="345" TableVariableX="1" TableVariableY="53" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="53" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="345" TableVariableX="1" TableVariableY="53" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="54" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="346" TableVariableX="1" TableVariableY="54" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="54" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="346" TableVariableX="1" TableVariableY="54" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="55" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="347" TableVariableX="1" TableVariableY="55" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="55" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="347" TableVariableX="1" TableVariableY="55" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="56" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="349" TableVariableX="1" TableVariableY="56" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="56" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="349" TableVariableX="1" TableVariableY="56" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="57" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="350" TableVariableX="1" TableVariableY="57" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="57" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="350" TableVariableX="1" TableVariableY="57" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="58" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="351" TableVariableX="1" TableVariableY="58" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="58" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="351" TableVariableX="1" TableVariableY="58" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="59" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="352" TableVariableX="1" TableVariableY="59" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="59" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="352" TableVariableX="1" TableVariableY="59" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="60" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="354" TableVariableX="1" TableVariableY="60" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="60" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="354" TableVariableX="1" TableVariableY="60" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="61" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="355" TableVariableX="1" TableVariableY="61" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="61" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="355" TableVariableX="1" TableVariableY="61" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="62" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="356" TableVariableX="1" TableVariableY="62" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="62" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="356" TableVariableX="1" TableVariableY="62" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="63" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="357" TableVariableX="1" TableVariableY="63" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="63" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="357" TableVariableX="1" TableVariableY="63" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="64" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="358" TableVariableX="1" TableVariableY="64" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="64" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="358" TableVariableX="1" TableVariableY="64" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="65" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="359" TableVariableX="1" TableVariableY="65" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="65" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="359" TableVariableX="1" TableVariableY="65" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="66" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="360" TableVariableX="1" TableVariableY="66" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="66" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="360" TableVariableX="1" TableVariableY="66" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="67" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="361" TableVariableX="1" TableVariableY="67" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="67" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="361" TableVariableX="1" TableVariableY="67" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="68" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="362" TableVariableX="1" TableVariableY="68" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="68" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="362" TableVariableX="1" TableVariableY="68" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="69" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="363" TableVariableX="1" TableVariableY="69" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="69" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="363" TableVariableX="1" TableVariableY="69" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="70" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="364" TableVariableX="1" TableVariableY="70" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="70" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="364" TableVariableX="1" TableVariableY="70" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="71" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="365" TableVariableX="1" TableVariableY="71" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="71" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="365" TableVariableX="1" TableVariableY="71" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="72" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="366" TableVariableX="1" TableVariableY="72" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="72" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="366" TableVariableX="1" TableVariableY="72" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="73" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="367" TableVariableX="1" TableVariableY="73" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="73" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="367" TableVariableX="1" TableVariableY="73" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="74" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="368" TableVariableX="1" TableVariableY="74" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="74" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="368" TableVariableX="1" TableVariableY="74" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="75" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="370" TableVariableX="1" TableVariableY="75" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="75" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="370" TableVariableX="1" TableVariableY="75" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="76" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="372" TableVariableX="1" TableVariableY="76" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="76" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="372" TableVariableX="1" TableVariableY="76" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="77" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="374" TableVariableX="1" TableVariableY="77" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="77" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="374" TableVariableX="1" TableVariableY="77" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="78" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="376" TableVariableX="1" TableVariableY="78" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="78" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="376" TableVariableX="1" TableVariableY="78" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="79" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="378" TableVariableX="1" TableVariableY="79" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="79" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="378" TableVariableX="1" TableVariableY="79" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
-                  <Action OrderNumber="80" LogLevel="-1" MouseX="" MouseY="" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="380" TableVariableX="1" TableVariableY="80" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                  <Action OrderNumber="80" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="380" TableVariableX="1" TableVariableY="80" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="81" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="382" TableVariableX="1" TableVariableY="81" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="82" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="384" TableVariableX="1" TableVariableY="82" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="83" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="386" TableVariableX="1" TableVariableY="83" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="84" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="388" TableVariableX="1" TableVariableY="84" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="85" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="390" TableVariableX="1" TableVariableY="85" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="86" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="392" TableVariableX="1" TableVariableY="86" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="87" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="394" TableVariableX="1" TableVariableY="87" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="88" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="396" TableVariableX="1" TableVariableY="88" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="89" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="398" TableVariableX="1" TableVariableY="89" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
+                    <Condition Enabled="false" Grouping="Or" />
+                  </Action>
+                  <Action OrderNumber="90" TableVariableOp="Set" TableVariableExpressionType="Numeric" TableVariableName="VCT-SpeedLookup" TableVariableExpression="400" TableVariableX="1" TableVariableY="90" TextAuraFontSize="8.25" TextAuraFontName="Microsoft Sans Serif" ActionType="TableVariable">
                     <Condition Enabled="false" Grouping="Or" />
                   </Action>
                 </Actions>
